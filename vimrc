@@ -1,0 +1,138 @@
+execute pathogen#infect()
+
+syntax on
+filetype plugin indent on
+
+set nocompatible
+
+set t_Co=256
+set background=dark
+colorscheme ir_black
+set cursorline
+set cursorcolumn
+
+set noerrorbells
+set visualbell
+set t_vb=
+
+set showcmd
+
+set timeoutlen=250
+
+set number
+set norelativenumber
+set numberwidth=5
+
+set history=1000
+
+set autoread " not sure about this one yet
+
+" Persistent undo. Why the hell isn't this default anyway?
+set undofile
+set undodir=~/.vim/undo
+
+set wildmenu
+set wildignore=*.o,*.jpg,*.png,*.ppm
+
+set mouse=
+
+set hidden " I don't even know what this does but it's supposed to be on
+
+set laststatus=2
+
+set expandtab
+set smarttab " not sure about this one yet
+set shiftwidth=4
+set tabstop=4
+set textwidth=80
+set wrap
+set scrolloff=1
+set formatoptions+=j
+
+set autoindent
+set cindent " not sure about this one yet
+
+let mapleader=" "
+
+set showmatch
+
+set ignorecase
+set smartcase
+set noincsearch
+set hlsearch
+" clear search highlight
+noremap <silent> <leader>h :noh<CR>
+
+inoremap <CR> <C-c>
+vnoremap <CR> <C-c>
+
+" é is right under your pinky on a Hungarian keyboard
+noremap é ;
+noremap É ,
+
+vnoremap <silent> * :call VisualSelection('f', '')<CR>
+vnoremap <silent> # :call VisualSelection('b', '')<CR>
+
+noremap j gj
+noremap k gk
+
+noremap J L10k
+noremap K H10j
+" use C-j for joining instead of the default J
+noremap <C-j> J
+set nojoinspaces
+
+nmap <C-k> "_dd
+vmap <C-k> "_d
+
+map Y y$
+
+" this hack makes G jump to and fro between the first and last lines
+noremap äResetG :noremap G ggäResetG<CR>
+noremap G GäResetG
+"TODO!
+
+set splitright
+set splitbelow
+set diffopt+=vertical
+
+map <C-s> :vsplit<CR>
+map <Tab> <C-w>w
+" Tab is the same as C-i. We're going to need a replacement to navigate the jumplist
+nnoremap <C-n> <C-i>
+
+set tabpagemax=20
+
+map <C-h> gT
+map <C-l> gt
+map <A-1> :tabn 1<CR>
+map <A-2> :tabn 2<CR>
+map <A-3> :tabn 3<CR>
+map <A-4> :tabn 4<CR>
+map <A-5> :tabn 5<CR>
+map <A-6> :tabn 6<CR>
+map <A-7> :tabn 7<CR>
+map <A-8> :tabn 8<CR>
+map <A-9> :tabn 9<CR>
+
+set pastetoggle=<leader>v
+nnoremap <leader>w :w<CR>
+
+" return cursor to where you left off last time
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" configure plugins
+nnoremap <leader>g :GundoToggle<CR>
+let g:gundo_width=50
+
+noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 5, 1)<CR>
+noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 5, 1)<CR>
+noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
+noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
+
+nmap :H :h
+" I can't figure out how to get the help to open up in a vsplit
+noremap :h :vertical h 
+
