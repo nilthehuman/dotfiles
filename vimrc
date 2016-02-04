@@ -115,7 +115,7 @@ map <A-7> :tabn 7<CR>
 map <A-8> :tabn 8<CR>
 map <A-9> :tabn 9<CR>
 
-set pastetoggle=<leader>v
+"set pastetoggle=<leader>v "this sucks when in insert mode
 nnoremap <leader>w :w<CR>
 
 " return cursor to where you left off last time
