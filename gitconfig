@@ -10,6 +10,7 @@
 	d = diff --minimal
 	ds = diff --minimal --staged
 	l = log -n 20 --graph --oneline --decorate=short
+	ls = log --summary
 	s = status
 [log]
 	date = short
