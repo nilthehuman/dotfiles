@@ -76,8 +76,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 noremap j gj
 noremap k gk
 
-noremap J L10k
-noremap K H10j
+noremap J L8k
+noremap K H8j
 " use C-j for joining instead of the default J
 noremap <C-j> J
 set nojoinspaces
