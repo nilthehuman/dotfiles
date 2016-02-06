@@ -19,9 +19,12 @@ DOTFILESDIR=`readlink -f $DOTFILESDIR` # get absolute path
 declare -A links=(
     ["${DOTFILESDIR}/bash_aliases"]="~/.bash_aliases"
     ["${DOTFILESDIR}/gitconfig"]="~/.gitconfig"
+    ["${DOTFILESDIR}/rc.xml"]="~/.config/openbox/rc.xml"
     ["${DOTFILESDIR}/vimrc"]="~/.vim/vimrc"
 )
 
+mkdir -p ~/.config
+mkdir -p ~/.config/openbox
 mkdir -p ~/.vim
 for dotfile in "${!links[@]}"; do
     ln -s $dotfile ${links["$dotfile"]};
