@@ -40,6 +40,8 @@ set autoread " not sure about this one yet
 set undofile
 set undodir=~/.vim/undo
 
+set sessionoptions-=options
+
 set wildmenu
 set wildignore=*.o,*.jpg,*.png,*.ppm
 
@@ -60,6 +62,8 @@ set formatoptions+=j
 
 set autoindent
 set cindent " not sure about this one yet
+
+set backspace=indent,start
 
 let mapleader=" "
 
