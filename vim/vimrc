@@ -137,13 +137,17 @@ if has("autocmd")
 endif
 
 " configure plugins
-nnoremap <leader>g :GundoToggle<CR>
-let g:gundo_width=50
+if exists('g:gundo_help')
+    nnoremap <leader>g :GundoToggle<CR>
+    let g:gundo_width=50
+endif
 
-noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 5, 1)<CR>
-noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 5, 1)<CR>
-noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
-noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
+if exists('s:save_cpo')
+    noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 5, 1)<CR>
+    noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 5, 1)<CR>
+    noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
+    noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
+endif
 
 nmap :H :h
 " I can't figure out how to get the help to open up in a vsplit
