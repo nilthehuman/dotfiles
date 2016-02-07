@@ -7,7 +7,7 @@ set nocompatible
 
 let terminator_profile=$PROFILE
 " Settings to accomodate each colorscheme
-if terminator_profile ==? "default"
+if terminator_profile ==? "" || terminator_profile ==? "default"
     set t_Co=256
     set background=dark
     set cursorline
