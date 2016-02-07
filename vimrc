@@ -5,11 +5,20 @@ filetype plugin indent on
 
 set nocompatible
 
-set t_Co=256
-set background=dark
-colorscheme ir_black
-set cursorline
-set cursorcolumn
+let terminator_profile=$PROFILE
+" Settings to accomodate each colorscheme
+if terminator_profile ==? "default"
+    set t_Co=256
+    set background=dark
+    set cursorline
+    set cursorcolumn
+    colorscheme ir_black
+endif
+if terminator_profile ==? "solarized"
+    set t_Co=16
+    set background=dark
+    colorscheme solarized
+endif
 
 set noerrorbells
 set visualbell

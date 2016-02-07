@@ -16,16 +16,23 @@ fi
 DOTFILESDIR=`dirname $0`
 DOTFILESDIR=`readlink -f $DOTFILESDIR` # get absolute path
 
+declare -a linkdirs=(
+    "~/.config"
+    "~/.config/openbox"
+    "~/.config/terminator"
+    "~/.vim"
+)
 declare -A links=(
     ["${DOTFILESDIR}/bash_aliases"]="~/.bash_aliases"
     ["${DOTFILESDIR}/gitconfig"]="~/.gitconfig"
     ["${DOTFILESDIR}/rc.xml"]="~/.config/openbox/rc.xml"
+    ["${DOTFILESDIR}/config"]="~/.config/terminator/config"
     ["${DOTFILESDIR}/vimrc"]="~/.vim/vimrc"
 )
 
-mkdir -p ~/.config
-mkdir -p ~/.config/openbox
-mkdir -p ~/.vim
+for linkdir in "${linkdirs[@]}"; do
+    mkdir -p $linkdir;
+done
 for dotfile in "${!links[@]}"; do
     ln -s $dotfile ${links["$dotfile"]};
 done
