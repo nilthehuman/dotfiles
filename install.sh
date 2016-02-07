@@ -23,11 +23,11 @@ declare -a linkdirs=(
     "~/.vim"
 )
 declare -A links=(
-    ["${DOTFILESDIR}/bash_aliases"]="~/.bash_aliases"
-    ["${DOTFILESDIR}/gitconfig"]="~/.gitconfig"
-    ["${DOTFILESDIR}/rc.xml"]="~/.config/openbox/rc.xml"
-    ["${DOTFILESDIR}/config"]="~/.config/terminator/config"
-    ["${DOTFILESDIR}/vimrc"]="~/.vim/vimrc"
+    ["${DOTFILESDIR}/bash/bash_aliases"]="~/.bash_aliases"
+    ["${DOTFILESDIR}/git/gitconfig"]="~/.gitconfig"
+    ["${DOTFILESDIR}/openbox/rc.xml"]="~/.config/openbox/rc.xml"
+    ["${DOTFILESDIR}/terminator/config"]="~/.config/terminator/config"
+    ["${DOTFILESDIR}/vim/vimrc"]="~/.vim/vimrc"
 )
 
 for linkdir in "${linkdirs[@]}"; do
