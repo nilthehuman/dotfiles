@@ -7,8 +7,8 @@
 	a = add
 	cm = commit
 	co = checkout
-	d = diff --minimal
-	ds = diff --minimal --staged
+	d = diff --minimal --word-diff
+	ds = diff --minimal --word-diff --staged
 	l = log -n 20 --graph --oneline --decorate=short
 	ls = log --summary
 	s = status
