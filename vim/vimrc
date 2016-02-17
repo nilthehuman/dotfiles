@@ -143,17 +143,42 @@ if has("autocmd")
   au FocusLost * :wa
 endif
 
-" configure plugins
-if exists('g:gundo_help')
-    nnoremap <leader>g :GundoToggle<CR>
-    let g:gundo_width=50
+" --==== configure plugins ====--
+
+" NERDTree
+if !empty(glob("~/.vim/bundle/nerdtree"))
+    nnoremap <leader>n :NERDTreeToggle<CR>
+    nnoremap <leader>m :NERDTreeFind<CR>
+    " open NERDTree if no files were specified
+    if has("autocmd")
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    endif
 endif
 
-if exists('s:save_cpo')
+" Tagbar
+if !empty(glob("~/.vim/bundle/tagbar"))
+    noremap <leader>l :TagbarToggle<CR>
+endif
+
+" smooth-scroll
+if !empty(glob("~/.vim/bundle/vim-smooth-scroll"))
     noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 5, 1)<CR>
     noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 5, 1)<CR>
     noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
     noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
+endif
+
+" Gundo
+if !empty(glob("~/.vim/bundle/gundo.vim"))
+    nnoremap <leader>g :GundoToggle<CR>
+    let g:gundo_width=50
+endif
+
+" The Silver Searcher
+if !empty(glob("~/.vim/bundle/ag.vim"))
+    let g:ag_working_path_mode="r"
+    noremap <leader>a :Ag " invoke Ag
 endif
 
 nmap :H :h
