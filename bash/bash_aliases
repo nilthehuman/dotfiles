@@ -6,7 +6,7 @@ alias g='git status'
 
 alias m='time make'
 
-alias up='sudo apt-get update && sudo apt-get upgrade'
+alias up='sudo apt-get update && sudo apt-get upgrade --yes'
 
 alias vi='vim.tiny -C -u NONE'
 
