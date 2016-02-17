@@ -100,6 +100,11 @@ vmap <C-k> "_d
 
 map Y y$
 
+" jump inside brackets
+" improve these to use /(.\{-}) later
+nnoremap ) t)vib
+nnoremap ( T(vib
+
 " this hack makes G jump to and fro between the first and last lines
 noremap äResetG :noremap G ggäResetG<CR>
 noremap G GäResetG
