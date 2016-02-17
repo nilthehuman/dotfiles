@@ -519,22 +519,22 @@
       </mousebind>
 
     <mousebind button="A-Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="C-A-Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="C-A-Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-S-Up" action="Click">
-      <action name="SendToDesktop"><to>previous</to></action>
+      <action name="SendToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-S-Down" action="Click">
-      <action name="SendToDesktop"><to>next</to></action>
+      <action name="SendToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     </context>
 
@@ -782,22 +782,22 @@
 
     <context name="Desktop">
     <mousebind button="Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="C-A-Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="C-A-Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
@@ -821,16 +821,16 @@
 
     <context name="MoveResize">
     <mousebind button="Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-Up" action="Click">
-      <action name="GoToDesktop"><to>previous</to></action>
+      <action name="GoToDesktop"><to>previous</to><wrap>no</wrap></action>
     </mousebind>
     <mousebind button="A-Down" action="Click">
-      <action name="GoToDesktop"><to>next</to></action>
+      <action name="GoToDesktop"><to>next</to><wrap>no</wrap></action>
     </mousebind>
     </context>
   </mouse>
