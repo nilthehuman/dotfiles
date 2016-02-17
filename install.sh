@@ -26,6 +26,7 @@ declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="~/.bash_aliases"
     ["${DOTFILESDIR}/git/gitconfig"]="~/.gitconfig"
     ["${DOTFILESDIR}/openbox/rc.xml"]="~/.config/openbox/rc.xml"
+    ["${DOTFILESDIR}/openbox/autostart"]="~/.config/openbox/autostart"
     ["${DOTFILESDIR}/terminator/config"]="~/.config/terminator/config"
     ["${DOTFILESDIR}/vim/vimrc"]="~/.vim/vimrc"
 )
