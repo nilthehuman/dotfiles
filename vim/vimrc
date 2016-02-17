@@ -136,9 +136,11 @@ map <A-9> :tabn 9<CR>
 "set pastetoggle=<leader>v "this sucks when in insert mode
 nnoremap <leader>w :w<CR>
 
-" return cursor to where you left off last time
 if has("autocmd")
+  " return cursor to where you left off last time
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " nice autosave idea from mscoutermarsh's vimrc
+  au FocusLost * :wa
 endif
 
 " configure plugins
