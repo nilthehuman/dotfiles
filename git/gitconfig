@@ -5,7 +5,9 @@
 	editor = vim
 [alias]
 	a = add
+	ap = add -p
 	cm = commit
+	ca = commit --amend
 	co = checkout
 	d = diff --minimal --word-diff
 	ds = diff --minimal --word-diff --staged
