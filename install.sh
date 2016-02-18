@@ -24,6 +24,7 @@ declare -a linkdirs=(
 )
 declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="~/.bash_aliases"
+    ["${DOTFILESDIR}/bash/bashrc"]="~/.bashrc"
     ["${DOTFILESDIR}/git/gitconfig"]="~/.gitconfig"
     ["${DOTFILESDIR}/openbox/rc.xml"]="~/.config/openbox/rc.xml"
     ["${DOTFILESDIR}/openbox/autostart"]="~/.config/openbox/autostart"
