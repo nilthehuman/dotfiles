@@ -136,7 +136,6 @@ map <C-h> gT
 map <C-l> gt
 
 "set pastetoggle=<leader>v "this sucks when in insert mode
-nnoremap <leader>w :w<CR>
 
 if has("autocmd")
   " return cursor to where you left off last time
@@ -149,6 +148,7 @@ endif
 
 " NERDTree
 if !empty(glob("~/.vim/bundle/nerdtree"))
+    nnoremap Q :NERDTreeToggle<CR>
     nnoremap <leader>n :NERDTreeToggle<CR>
     nnoremap <leader>m :NERDTreeFind<CR>
     " open NERDTree if no files were specified
@@ -165,10 +165,15 @@ endif
 
 " smooth-scroll
 if !empty(glob("~/.vim/bundle/vim-smooth-scroll"))
-    noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 5, 1)<CR>
-    noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 5, 1)<CR>
+    noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
+    noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
     noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
     noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
+endif
+
+" Airline
+if !empty(glob("~/.vim/bundle/vim-airline"))
+    let g:airline#extensions#tabline#enabled=1
 endif
 
 " Gundo
@@ -177,11 +182,31 @@ if !empty(glob("~/.vim/bundle/gundo.vim"))
     let g:gundo_width=50
 endif
 
-" The Silver Searcher
+" Ctrl-P
+if !empty(glob("~/.vim/bundle/ctrlp.vim"))
+    let g:ctrlp_match_window='bottom,order:btt,min:10,max:10'
+    let g:ctrlp_switch_buffer='Et'
+    let g:ctrlp_working_path_mode='ra'
+endif
+
+" Ag, The Silver Searcher
 if !empty(glob("~/.vim/bundle/ag.vim"))
     let g:ag_working_path_mode="r"
-    noremap <leader>a :Ag " invoke Ag
+    noremap <leader>a :Ag 
 endif
+
+" Syntastic!
+if !empty(glob("~/.vim/bundle/syntastic"))
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 1
+
+    let g:syntastic_cpp_checkers=['gcc', 'cppcheck']
+endif
+
+" EasyMotion
+"if !empty(glob("~/.vim/bundle/vim-easymotion"))
+" TODO!
 
 nmap :H :h
 " I can't figure out how to get the help to open up in a vsplit
