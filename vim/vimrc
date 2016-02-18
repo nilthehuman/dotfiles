@@ -43,7 +43,13 @@ set undodir=~/.vim/undo
 set sessionoptions-=options
 
 set wildmenu
-set wildignore=*.o,*.jpg,*.png,*.ppm
+set wildignore+=*.o
+set wildignore+=*.bmp,*.gif,*.jpg,*.jpeg,*.png,*.ppm
+set wildignore+=*.flac,*.mp3,*.ogg,*.wav
+set wildignore+=*.avi,*.mkv,*.mov,*.mpg,*.mpeg,*.mp4,*.ogv,*.wmv
+set wildignore+=*.flv,*.swf
+set wildignore+=*.so,*.swp
+set wildignore+=*.tar.gz,*.tgz,*.7z,*.zip
 
 set mouse=
 
