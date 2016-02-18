@@ -64,7 +64,7 @@ set tabstop=4
 set textwidth=80
 set wrap
 set scrolloff=1
-set formatoptions+=j
+set formatoptions+=jn
 
 set autoindent
 set cindent " not sure about this one yet
@@ -79,6 +79,7 @@ set ignorecase
 set smartcase
 set noincsearch
 set hlsearch
+set gdefault
 " clear search highlight
 noremap <silent> <leader>h :noh<CR>
 
@@ -104,7 +105,7 @@ set nojoinspaces
 nmap <C-k> "_dd
 vmap <C-k> "_d
 
-map Y y$
+nnoremap Y y$
 
 " jump inside brackets
 " improve these to use /(.\{-}) later
