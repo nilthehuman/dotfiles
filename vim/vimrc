@@ -112,6 +112,10 @@ nnoremap Y y$
 nnoremap ) t)vib
 nnoremap ( T(vib
 
+" swap commands for link navigation in online help
+nnoremap <C-t> <C-]>
+nnoremap <C-]> <C-t>
+
 " this hack makes G jump to and fro between the first and last lines
 noremap äResetG :noremap G ggäResetG<CR>
 noremap G GäResetG
