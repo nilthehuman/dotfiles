@@ -135,7 +135,7 @@ set tabpagemax=20
 map <C-h> gT
 map <C-l> gt
 
-"set pastetoggle=<leader>v "this sucks when in insert mode
+set pastetoggle=,p
 
 if has("autocmd")
   " return cursor to where you left off last time
