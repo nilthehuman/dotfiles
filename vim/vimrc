@@ -137,6 +137,8 @@ map <C-l> gt
 
 set pastetoggle=,p
 
+cnoreabbrev bufs buffers
+
 if has("autocmd")
   " return cursor to where you left off last time
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
