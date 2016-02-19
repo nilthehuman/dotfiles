@@ -208,6 +208,38 @@ endif
 "if !empty(glob("~/.vim/bundle/vim-easymotion"))
 " TODO!
 
+" Rainbow Parentheses
+if !empty(glob("~/.vim/bundle/rainbow_parentheses.vim"))
+    " mix up the colors so they're more distinct
+    " also, darkgray is invisible in solarized
+    let g:rbpt_colorpairs = [
+        \ ['darkcyan',    'black'],
+        \ ['gray',        'black'],
+        \ ['Darkblue',    'black'],
+        \ ['black',       'black'],
+        \ ['brown',       'black'],
+        \ ['darkred',     'black'],
+        \ ['darkmagenta', 'black'],
+        \ ['darkgreen',   'black'],
+        \ ['red',         'black'],
+        \ ['darkcyan',    'black'],
+        \ ['Darkblue',    'black'],
+        \ ['darkmagenta', 'black'],
+        \ ['darkgreen',   'black'],
+        \ ['darkred',     'black'],
+        \ ['brown',       'black']
+    \ ]
+
+    if has("autocmd")
+        autocmd VimEnter * RainbowParenthesesActivate
+        autocmd Syntax * RainbowParenthesesLoadBraces
+        autocmd Syntax * RainbowParenthesesLoadRound
+        autocmd Syntax * RainbowParenthesesLoadChevrons
+    endif
+
+    nnoremap <silent> ,, :RainbowParenthesesToggle<CR>
+endif
+
 nmap :H :h
 " I can't figure out how to get the help to open up in a vsplit
 noremap :h :vertical h 
