@@ -21,3 +21,6 @@ alias up='sudo apt-get update && sudo apt-get upgrade --yes'
 
 alias vi='vim.tiny -C -u NONE'
 
+alias xb='xboard'
+alias xboard='xboard -initialMode Analysis -absoluteAnalysisScores true -scoreWhite true -fUCI -fcp stockfish -sUCI -scp stockfish'
+

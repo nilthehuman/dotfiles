@@ -389,6 +389,15 @@
         <command>env PROFILE="solarized" x-terminal-emulator --profile=solarized</command>
       </action>
     </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>false</enabled>
+          <name>XBoard</name>
+        </startupnotify>
+        <command>xboard -initialMode Analysis -absoluteAnalysisScores true -scoreWhite true -fUCI -fcp stockfish -sUCI -scp stockfish</command>
+      </action>
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <startupnotify>
