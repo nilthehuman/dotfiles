@@ -85,6 +85,8 @@ set gdefault
 " clear search highlight
 noremap <silent> <leader>h :noh<CR>
 
+set omnifunc=syntaxcomplete#Complete
+
 inoremap <CR> <Esc>
 vnoremap <CR> <Esc>
 
