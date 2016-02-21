@@ -85,8 +85,8 @@ set gdefault
 " clear search highlight
 noremap <silent> <leader>h :noh<CR>
 
-inoremap <CR> <C-c>
-vnoremap <CR> <C-c>
+inoremap <CR> <Esc>
+vnoremap <CR> <Esc>
 
 " é is right under your pinky on a Hungarian keyboard
 noremap é ;
@@ -256,5 +256,5 @@ endif
 
 nmap :H :h
 " I can't figure out how to get the help to open up in a vsplit
-noremap :h :vertical h 
+cnoremap :h :vertical h
 
