@@ -134,6 +134,11 @@ map <Tab> <C-w>w
 " Tab is the same as C-i. We're going to need a replacement to navigate the jumplist
 nnoremap <C-n> <C-i>
 
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
+nnoremap <C-Left> <C-w><
+nnoremap <C-Right> <C-w>>
+
 set tabpagemax=20
 
 map <C-h> gT
