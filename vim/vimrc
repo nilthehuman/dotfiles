@@ -24,6 +24,8 @@ set noerrorbells
 set visualbell
 set t_vb=
 
+set lazyredraw
+
 set showcmd
 
 set timeoutlen=150
@@ -241,6 +243,15 @@ if !empty(glob("~/.vim/bundle/rainbow_parentheses.vim"))
     endif
 
     nnoremap <silent> ,, :RainbowParenthesesToggle<CR>
+endif
+
+" dragvisuals.vim
+if !empty(glob("~/.vim/bundle/dragvisuals.vim"))
+    vmap <expr> <C-Left>  DVB_Drag('left')
+    vmap <expr> <C-Right> DVB_Drag('right')
+    vmap <expr> <C-Down>  DVB_Drag('down')
+    vmap <expr> <C-Up>    DVB_Drag('up')
+    vmap <expr> D         DVB_Duplicate()
 endif
 
 nmap :H :h
