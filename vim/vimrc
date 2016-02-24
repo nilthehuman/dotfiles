@@ -190,6 +190,7 @@ endif
 
 " Airline
 if !empty(glob("~/.vim/bundle/vim-airline"))
+    set noshowmode
     let g:airline#extensions#tabline#enabled=1
 endif
 
