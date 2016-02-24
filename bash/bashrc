@@ -116,5 +116,8 @@ fi
 stty -ixoff
 stty -ixon
 
+# enable cycling through suggestions
+bind TAB:menu-complete
+
 . /usr/share/autojump/autojump.sh
 
