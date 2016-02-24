@@ -251,7 +251,7 @@ if !empty(glob("~/.vim/bundle/rainbow_parentheses.vim"))
         autocmd VimEnter * RainbowParenthesesActivate
         autocmd Syntax * RainbowParenthesesLoadBraces
         autocmd Syntax * RainbowParenthesesLoadRound
-        autocmd Syntax * RainbowParenthesesLoadChevrons
+        " TODO: hack plugin to make chevrons work right
     endif
 
     nnoremap <silent> ,, :RainbowParenthesesToggle<CR>
