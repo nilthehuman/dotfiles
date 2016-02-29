@@ -6,6 +6,7 @@
 [alias]
 	a = add
 	ap = add -p
+	b = branch
 	cm = commit
 	ca = commit --amend
 	co = checkout
