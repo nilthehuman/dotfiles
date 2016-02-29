@@ -47,6 +47,8 @@ set sessionoptions-=options
 set wildmenu
 set wildignore+=*.o
 set wildignore+=*.bmp,*.gif,*.jpg,*.jpeg,*.png,*.ppm
+set wildignore+=*.odt,*.ods,*.odp,*.doc,*.docx,*.xls,*.ppt
+set wildignore+=*.pdf,*.djvu,*.djv
 set wildignore+=*.flac,*.mp3,*.ogg,*.wav
 set wildignore+=*.avi,*.mkv,*.mov,*.mpg,*.mpeg,*.mp4,*.ogv,*.wmv
 set wildignore+=*.flv,*.swf
