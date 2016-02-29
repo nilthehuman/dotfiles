@@ -267,6 +267,11 @@ if !empty(glob("~/.vim/bundle/dragvisuals.vim"))
     vmap <expr> D         DVB_Duplicate()
 endif
 
+" AutoClose
+if !empty(glob("~/.vim/bundle/vim-autoclose"))
+    let g:autoclose_vim_commentmode = 1
+endif
+
 nmap :H :h
 " I can't figure out how to get the help to open up in a vsplit
 cnoremap :h :vertical h
