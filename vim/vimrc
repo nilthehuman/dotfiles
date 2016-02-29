@@ -96,9 +96,6 @@ vnoremap <CR> <Esc>
 noremap é ;
 noremap É ,
 
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
 noremap j gj
 noremap k gk
 
@@ -129,6 +126,7 @@ noremap G GäResetG
 
 " asterisk searches for current selection
 vnoremap * "zy/z<CR>
+vnoremap # "zy?z<CR>
 
 set splitright
 set splitbelow
