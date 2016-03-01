@@ -125,8 +125,14 @@ noremap G GäResetG
 "TODO!
 
 " asterisk searches for current selection
-vnoremap * "zy/z<CR>
-vnoremap # "zy?z<CR>
+function s:VisualSearch()
+    let temp = @z
+    normal! gv"zy
+    let @/ = '\V' . @z
+    let @z = temp
+endfunction
+vnoremap * :call <SID>VisualSearch()<CR>/<CR>
+vnoremap # :call <SID>VisualSearch()<CR>?<CR>
 
 set splitright
 set splitbelow
