@@ -170,6 +170,7 @@ endif
 
 " NERDTree
 if !empty(glob("~/.vim/bundle/nerdtree"))
+    " TODO: do something about the startup lag
     nnoremap Q :NERDTreeToggle<CR>
     nnoremap <leader>n :NERDTreeToggle<CR>
     nnoremap <leader>m :NERDTreeFind<CR>
@@ -223,8 +224,8 @@ endif
 " Syntastic!
 if !empty(glob("~/.vim/bundle/syntastic"))
     let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 1
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_check_on_wq = 0
 
     let g:syntastic_cpp_checkers=['gcc', 'cppcheck']
     let g:syntastic_vim_checkers=['vint']
