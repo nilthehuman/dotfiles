@@ -1,6 +1,8 @@
 " plugins, colorschemes and vimrc are stored here:
 let vimdir = '~/.vim'
 
+
+
 if !empty(glob(vimdir . '/autoload/pathogen.vim'))
     execute pathogen#infect()
 endif
@@ -8,6 +10,8 @@ endif
 if has('autocmd')
     filetype plugin indent on
 endif
+
+" Syntax and Colors {{{
 if has('syntax')
     syntax on
 
@@ -32,118 +36,70 @@ if has('syntax')
     highlight DiffDelete ctermfg=none guifg=none
     highlight DiffText   ctermfg=none guifg=none
 endif
+" }}} Syntax and Colors
 
+
+
+" Basic Settings {{{
 set nocompatible
 
 set noerrorbells
 set visualbell
 set t_vb=
 
-set lazyredraw
-
-set showcmd
+set mouse=
 
 set timeoutlen=150
+
+set backspace=indent,start
+
+set showmatch
+
+if has('autocmd')
+  " return cursor to where you left off last time
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$') | exe "normal! g'\"" | endif
+  " nice autosave idea from mscoutermarsh's vimrc
+  au FocusLost * :wa
+endif
+" }}} Basic Settings
+
+
+
+" User Interface {{{
+set showcmd
 
 set number
 set norelativenumber
 set numberwidth=5
 
-set history=1000
+set laststatus=2
 
-set autoread " not sure about this one yet
+set lazyredraw
 
-" Persistent undo. Why the hell isn't this default anyway?
-if has('persistent_undo')
-    set undofile
-    execute 'set undodir=' . vimdir . '/undo'
-endif
-
-set sessionoptions-=options
-
-set wildmenu
-set wildignore+=*.o
-set wildignore+=*.bmp,*.gif,*.jpg,*.jpeg,*.png,*.ppm
-set wildignore+=*.odt,*.ods,*.odp,*.doc,*.docx,*.xls,*.ppt
-set wildignore+=*.pdf,*.djvu,*.djv
-set wildignore+=*.flac,*.mp3,*.ogg,*.wav
-set wildignore+=*.avi,*.mkv,*.mov,*.mpg,*.mpeg,*.mp4,*.ogv,*.wmv
-set wildignore+=*.flv,*.swf
-set wildignore+=*.so,*.swp
-set wildignore+=*.tar.gz,*.tgz,*.7z,*.zip
-
-set mouse=
+set splitright
+set splitbelow
+set diffopt+=vertical
 
 set hidden " I don't even know what this does but it's supposed to be on
 
-set laststatus=2
+if has('folding')
+    set foldmethod=marker
+endif
+" }}} User Interface
 
-set expandtab
-set smarttab " not sure about this one yet
-set shiftwidth=4
-set tabstop=4
-set textwidth=80
-set wrap
-set scrolloff=1
-set formatoptions+=jn
 
-set autoindent
-set cindent " not sure about this one yet
 
-set backspace=indent,start
-
-let mapleader=' '
-
-set showmatch
-
+" Searching {{{
 set ignorecase
 set smartcase
 set noincsearch
 set hlsearch
 set gdefault
+
 if exists(':noh')
     " clear search highlight
     noremap <silent> <leader>h :noh<CR>
 endif
-
-if exists('+omnifunc')
-    set omnifunc=syntaxcomplete#Complete
-endif
-
-inoremap <CR> <Esc>
-vnoremap <CR> <Esc>
-
-" é is right under your pinky on a Hungarian keyboard
-noremap é ;
-noremap É ,
-
-noremap j gj
-noremap k gk
-
-noremap J L10k
-noremap K H10j
-" use C-j for joining instead of the default J
-noremap <C-j> J
-set nojoinspaces
-
-nmap <C-k> "_dd
-vmap <C-k> "_d
-
-nnoremap Y y$
-
-" jump inside brackets
-" improve these to use /(.\{-}) later
-nnoremap ) t)vib
-nnoremap ( T(vib
-
-" swap commands for link navigation in online help
-nnoremap <C-t> <C-]>
-nnoremap <C-]> <C-t>
-
-" this hack makes G jump to and fro between the first and last lines
-noremap äResetG :noremap G ggäResetG<CR>
-noremap G GäResetG
-"TODO!
 
 " asterisk searches for current selection
 vnoremap * "zy/<C-r>z<CR>
@@ -159,11 +115,111 @@ if exists(':function')
     vnoremap * :call <SID>VisualSearch()<CR>/<CR>
     vnoremap # :call <SID>VisualSearch()<CR>?<CR>
 endif
+" }}} Searching
 
-set splitright
-set splitbelow
-set diffopt+=vertical
 
+
+" Persistence {{{
+set history=1000
+" Persistent undo. Why the hell isn't this default anyway?
+if has('persistent_undo')
+    set undofile
+    execute 'set undodir=' . vimdir . '/undo'
+endif
+
+set sessionoptions-=options
+" }}} Persistence
+
+
+
+" Wildmenu {{{
+set wildmenu
+set wildignore+=*.o
+set wildignore+=*.bmp,*.gif,*.jpg,*.jpeg,*.png,*.ppm
+set wildignore+=*.odt,*.ods,*.odp,*.doc,*.docx,*.xls,*.ppt
+set wildignore+=*.pdf,*.djvu,*.djv
+set wildignore+=*.flac,*.mp3,*.ogg,*.wav
+set wildignore+=*.avi,*.mkv,*.mov,*.mpg,*.mpeg,*.mp4,*.ogv,*.wmv
+set wildignore+=*.flv,*.swf
+set wildignore+=*.so,*.swp
+set wildignore+=*.tar.gz,*.tgz,*.7z,*.zip
+" }}} Wildmenu
+
+
+
+" Code Formatting {{{
+set expandtab
+set smarttab " not sure about this one yet
+set shiftwidth=4
+set tabstop=4
+set textwidth=80
+set wrap
+set scrolloff=1
+set formatoptions+=jn
+
+set autoindent
+set cindent " not sure about this one yet
+" }}} Code Formatting
+
+
+
+" Miscellaneous Settings {{{
+set autoread " not sure about this one yet
+
+set pastetoggle=,p
+
+let mapleader=' '
+
+if exists('+omnifunc')
+    set omnifunc=syntaxcomplete#Complete
+endif
+" }}} Miscellaneous Settings
+
+
+
+" Mappings {{{
+
+" Navigation {{{
+" é is right under your pinky on a Hungarian keyboard
+noremap é ;
+noremap É ,
+
+noremap j gj
+noremap k gk
+
+noremap J L10k
+noremap K H10j
+
+" jump inside brackets
+" improve these to use /(.\{-}) later
+nnoremap ) t)vib
+nnoremap ( T(vib
+
+" swap commands for link navigation in online help
+nnoremap <C-t> <C-]>
+nnoremap <C-]> <C-t>
+
+" this hack makes G jump to and fro between the first and last lines
+noremap äResetG :noremap G ggäResetG<CR>
+noremap G GäResetG
+"TODO!
+" }}} Navigation
+
+" Editing {{{
+" use C-j for joining
+noremap <C-j> J
+set nojoinspaces
+
+inoremap <CR> <Esc>
+vnoremap <CR> <Esc>
+
+nmap <C-k> "_dd
+vmap <C-k> "_d
+
+nnoremap Y y$
+" }}} Editing
+
+" Windows and Tabs {{{
 map <C-s> :vsplit<CR>
 map <Tab> <C-w>w
 " Tab is the same as C-i. We're going to need a replacement to navigate the jumplist
@@ -179,22 +235,22 @@ set tabpagemax=20
 map <C-h> gT
 map <C-l> gt
 
-set pastetoggle=,p
-
 cnoreabbrev bufs buffers
 
+" open up help in a vsplit
+cabbrev H vertical h
+cabbrev h vertical h
+
 nnoremap ZZ :wqa<CR>
+" }}} Windows and Tabs
 
-if has('autocmd')
-  " return cursor to where you left off last time
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$') | exe "normal! g'\"" | endif
-  " nice autosave idea from mscoutermarsh's vimrc
-  au FocusLost * :wa
-endif
+" }}} Mappings
 
-" --==== configure plugins ====--
 
-" NERDTree
+
+" Plugin Configuration {{{
+
+" NERDTree {{{
 if !empty(glob(vimdir . '/bundle/nerdtree'))
     " TODO: do something about the startup lag
     nnoremap Q :NERDTreeToggle<CR>
@@ -207,47 +263,54 @@ if !empty(glob(vimdir . '/bundle/nerdtree'))
     endif
     let g:NERDTreeRespectWildIgnore=1
 endif
+" }}} NERDTree
 
-" Tagbar
+" Tagbar {{{
 if !empty(glob(vimdir . '/bundle/tagbar'))
     noremap <leader>l :TagbarToggle<CR>
 endif
+" }}} Tagbar
 
-" smooth-scroll
+" smooth-scroll {{{
 if !empty(glob(vimdir . '/bundle/vim-smooth-scroll'))
     noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
     noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
     noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
     noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
 endif
+" }}} smooth-scroll
 
-" Airline
+" Airline {{{
 if !empty(glob(vimdir . '/bundle/vim-airline'))
     set noshowmode
     let g:airline#extensions#tabline#enabled=1
 endif
+" }}} Airline
 
-" Gundo
+" Gundo {{{
 if !empty(glob(vimdir . '/bundle/gundo.vim'))
     nnoremap <leader>g :GundoToggle<CR>
     let g:gundo_width=50
 endif
+" }}} Gundo
 
-" Ctrl-P
+" Ctrl-P {{{
 if !empty(glob(vimdir . '/bundle/ctrlp.vim'))
     let g:ctrlp_match_window='bottom,order:btt,min:10,max:10'
     let g:ctrlp_show_hidden=1
     let g:ctrlp_switch_buffer='Et'
     let g:ctrlp_working_path_mode='ra'
 endif
+" }}} Ctrl-P
 
-" Ag, The Silver Searcher
+" Ag, The Silver Searcher {{{
 if !empty(glob(vimdir . '/bundle/ag.vim'))
     let g:ag_working_path_mode='r'
     noremap <leader>a :Ag 
 endif
+" }}} Ag, The Silver Searcher
 
-" Syntastic!
+" Syntastic! {{{
 if !empty(glob(vimdir . '/bundle/syntastic'))
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_check_on_open = 0
@@ -257,8 +320,9 @@ if !empty(glob(vimdir . '/bundle/syntastic'))
     let g:syntastic_vim_checkers=['vint']
     let g:syntastic_vim_vint_quiet_messages={ 'level': 'warning' }
 endif
+" }}} Syntastic!
 
-" gitgutter
+" gitgutter {{{
 if !empty(glob(vimdir . '/bundle/vim-gitgutter'))
     set updatetime=150
     let g:gitgutter_diff_args = '--minimal -w'
@@ -266,12 +330,14 @@ if !empty(glob(vimdir . '/bundle/vim-gitgutter'))
         let g:gitgutter_highlight_lines = 1
     endif
 endif
+" }}} gitgutter
 
-" EasyMotion
+" EasyMotion {{{
 "if !empty(glob(vimdir . '/bundle/vim-easymotion'))
 " TODO!
+" }}} EasyMotion
 
-" Rainbow Parentheses
+" Rainbow Parentheses {{{
 if !empty(glob(vimdir . '/bundle/rainbow_parentheses.vim'))
     " mix up the colors so they're more distinct
     " also, darkgray is invisible in solarized
@@ -302,8 +368,9 @@ if !empty(glob(vimdir . '/bundle/rainbow_parentheses.vim'))
 
     nnoremap <silent> ,, :RainbowParenthesesToggle<CR>
 endif
+" }}} Rainbow Parentheses
 
-" dragvisuals.vim
+" dragvisuals.vim {{{
 if !empty(glob(vimdir . '/bundle/dragvisuals.vim'))
     vmap <expr> <C-Left>  DVB_Drag('left')
     vmap <expr> <C-Right> DVB_Drag('right')
@@ -311,13 +378,13 @@ if !empty(glob(vimdir . '/bundle/dragvisuals.vim'))
     vmap <expr> <C-Up>    DVB_Drag('up')
     vmap <expr> D         DVB_Duplicate()
 endif
+" }}} dragvisuals.vim
 
-" AutoClose
+" AutoClose {{{
 if !empty(glob(vimdir . '/bundle/vim-autoclose'))
     let g:autoclose_vim_commentmode = 1
 endif
+" }}} AutoClose
 
-" open up help in a vsplit
-cabbrev H vertical h
-cabbrev h vertical h
+" }}} Plugin Configuration
 
