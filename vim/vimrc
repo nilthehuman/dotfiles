@@ -1,26 +1,26 @@
 " plugins, colorschemes and vimrc are stored here:
-let vimdir = "~/.vim"
+let vimdir = '~/.vim'
 
-if !empty(glob(vimdir . "/autoload/pathogen.vim"))
+if !empty(glob(vimdir . '/autoload/pathogen.vim'))
     execute pathogen#infect()
 endif
 
-if has("autocmd")
+if has('autocmd')
     filetype plugin indent on
 endif
-if has("syntax")
+if has('syntax')
     syntax on
 
     let terminator_profile=$PROFILE
     " Settings to accomodate each colorscheme
-    if terminator_profile ==? "" || terminator_profile ==? "default"
+    if terminator_profile ==? '' || terminator_profile ==? 'default'
         set t_Co=256
         set background=dark
         set cursorline
         set cursorcolumn
         colorscheme ir_black
     endif
-    if terminator_profile ==? "solarized"
+    if terminator_profile ==? 'solarized'
         set t_Co=16
         set background=dark
         colorscheme solarized
@@ -56,7 +56,7 @@ set autoread " not sure about this one yet
 " Persistent undo. Why the hell isn't this default anyway?
 if has('persistent_undo')
     set undofile
-    execute "set undodir=" . vimdir . "/undo"
+    execute 'set undodir=' . vimdir . '/undo'
 endif
 
 set sessionoptions-=options
@@ -92,7 +92,7 @@ set cindent " not sure about this one yet
 
 set backspace=indent,start
 
-let mapleader=" "
+let mapleader=' '
 
 set showmatch
 
@@ -185,9 +185,9 @@ cnoreabbrev bufs buffers
 
 nnoremap ZZ :wqa<CR>
 
-if has("autocmd")
+if has('autocmd')
   " return cursor to where you left off last time
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$') | exe "normal! g'\"" | endif
   " nice autosave idea from mscoutermarsh's vimrc
   au FocusLost * :wa
 endif
@@ -195,26 +195,26 @@ endif
 " --==== configure plugins ====--
 
 " NERDTree
-if !empty(glob(vimdir . "/bundle/nerdtree"))
+if !empty(glob(vimdir . '/bundle/nerdtree'))
     " TODO: do something about the startup lag
     nnoremap Q :NERDTreeToggle<CR>
     nnoremap <leader>n :NERDTreeToggle<CR>
     nnoremap <leader>m :NERDTreeFind<CR>
     " open NERDTree if no files were specified
-    if has("autocmd")
+    if has('autocmd')
         autocmd StdinReadPre * let s:std_in=1
-        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
     endif
     let g:NERDTreeRespectWildIgnore=1
 endif
 
 " Tagbar
-if !empty(glob(vimdir . "/bundle/tagbar"))
+if !empty(glob(vimdir . '/bundle/tagbar'))
     noremap <leader>l :TagbarToggle<CR>
 endif
 
 " smooth-scroll
-if !empty(glob(vimdir . "/bundle/vim-smooth-scroll"))
+if !empty(glob(vimdir . '/bundle/vim-smooth-scroll'))
     noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
     noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
     noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
@@ -222,19 +222,19 @@ if !empty(glob(vimdir . "/bundle/vim-smooth-scroll"))
 endif
 
 " Airline
-if !empty(glob(vimdir . "/bundle/vim-airline"))
+if !empty(glob(vimdir . '/bundle/vim-airline'))
     set noshowmode
     let g:airline#extensions#tabline#enabled=1
 endif
 
 " Gundo
-if !empty(glob(vimdir . "/bundle/gundo.vim"))
+if !empty(glob(vimdir . '/bundle/gundo.vim'))
     nnoremap <leader>g :GundoToggle<CR>
     let g:gundo_width=50
 endif
 
 " Ctrl-P
-if !empty(glob(vimdir . "/bundle/ctrlp.vim"))
+if !empty(glob(vimdir . '/bundle/ctrlp.vim'))
     let g:ctrlp_match_window='bottom,order:btt,min:10,max:10'
     let g:ctrlp_show_hidden=1
     let g:ctrlp_switch_buffer='Et'
@@ -242,13 +242,13 @@ if !empty(glob(vimdir . "/bundle/ctrlp.vim"))
 endif
 
 " Ag, The Silver Searcher
-if !empty(glob(vimdir . "/bundle/ag.vim"))
-    let g:ag_working_path_mode="r"
+if !empty(glob(vimdir . '/bundle/ag.vim'))
+    let g:ag_working_path_mode='r'
     noremap <leader>a :Ag 
 endif
 
 " Syntastic!
-if !empty(glob(vimdir . "/bundle/syntastic"))
+if !empty(glob(vimdir . '/bundle/syntastic'))
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_check_on_open = 0
     let g:syntastic_check_on_wq = 0
@@ -259,20 +259,20 @@ if !empty(glob(vimdir . "/bundle/syntastic"))
 endif
 
 " gitgutter
-if !empty(glob(vimdir . "/bundle/vim-gitgutter"))
+if !empty(glob(vimdir . '/bundle/vim-gitgutter'))
     set updatetime=150
-    let g:gitgutter_diff_args = "--minimal -w"
-    if terminator_profile ==? "solarized"
+    let g:gitgutter_diff_args = '--minimal -w'
+    if terminator_profile ==? 'solarized'
         let g:gitgutter_highlight_lines = 1
     endif
 endif
 
 " EasyMotion
-"if !empty(glob(vimdir . "/bundle/vim-easymotion"))
+"if !empty(glob(vimdir . '/bundle/vim-easymotion'))
 " TODO!
 
 " Rainbow Parentheses
-if !empty(glob(vimdir . "/bundle/rainbow_parentheses.vim"))
+if !empty(glob(vimdir . '/bundle/rainbow_parentheses.vim'))
     " mix up the colors so they're more distinct
     " also, darkgray is invisible in solarized
     let g:rbpt_colorpairs = [
@@ -293,7 +293,7 @@ if !empty(glob(vimdir . "/bundle/rainbow_parentheses.vim"))
         \ ['brown',       'black']
     \ ]
 
-    if has("autocmd")
+    if has('autocmd')
         autocmd VimEnter * RainbowParenthesesActivate
         autocmd Syntax * RainbowParenthesesLoadBraces
         autocmd Syntax * RainbowParenthesesLoadRound
@@ -304,7 +304,7 @@ if !empty(glob(vimdir . "/bundle/rainbow_parentheses.vim"))
 endif
 
 " dragvisuals.vim
-if !empty(glob(vimdir . "/bundle/dragvisuals.vim"))
+if !empty(glob(vimdir . '/bundle/dragvisuals.vim'))
     vmap <expr> <C-Left>  DVB_Drag('left')
     vmap <expr> <C-Right> DVB_Drag('right')
     vmap <expr> <C-Down>  DVB_Drag('down')
@@ -313,7 +313,7 @@ if !empty(glob(vimdir . "/bundle/dragvisuals.vim"))
 endif
 
 " AutoClose
-if !empty(glob(vimdir . "/bundle/vim-autoclose"))
+if !empty(glob(vimdir . '/bundle/vim-autoclose'))
     let g:autoclose_vim_commentmode = 1
 endif
 
