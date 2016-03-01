@@ -290,7 +290,7 @@ if !empty(glob("~/.vim/bundle/vim-autoclose"))
     let g:autoclose_vim_commentmode = 1
 endif
 
-nmap :H :h
-" I can't figure out how to get the help to open up in a vsplit
-cnoremap :h :vertical h
+" open up help in a vsplit
+cabbrev H vertical h
+cabbrev h vertical h
 
