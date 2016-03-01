@@ -20,6 +20,12 @@ if terminator_profile ==? "solarized"
     colorscheme solarized
 endif
 
+" leave syntax highlight alone
+highlight DiffAdd    ctermfg=none guifg=none
+highlight DiffChange ctermfg=none guifg=none
+highlight DiffDelete ctermfg=none guifg=none
+highlight DiffText   ctermfg=none guifg=none
+
 set noerrorbells
 set visualbell
 set t_vb=
