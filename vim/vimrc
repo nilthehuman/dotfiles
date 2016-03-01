@@ -324,8 +324,10 @@ endif
 
 " gitgutter {{{
 if !empty(glob(vimdir . '/bundle/vim-gitgutter'))
+    set numberwidth=1 " override previous setting
     set updatetime=150
     let g:gitgutter_diff_args = '--minimal -w'
+    let g:gitgutter_sign_column_always = 1
     if terminator_profile ==? 'solarized'
         let g:gitgutter_highlight_lines = 1
     endif
