@@ -229,6 +229,15 @@ if !empty(glob("~/.vim/bundle/syntastic"))
     let g:syntastic_cpp_checkers=['gcc', 'cppcheck']
 endif
 
+" gitgutter
+if !empty(glob("~/.vim/bundle/vim-gitgutter"))
+    set numberwidth=1
+    set updatetime=150
+    if terminator_profile ==? "solarized"
+        let g:gitgutter_highlight_lines = 1
+    endif
+endif
+
 " EasyMotion
 "if !empty(glob("~/.vim/bundle/vim-easymotion"))
 " TODO!
