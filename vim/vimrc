@@ -227,6 +227,8 @@ if !empty(glob("~/.vim/bundle/syntastic"))
     let g:syntastic_check_on_wq = 1
 
     let g:syntastic_cpp_checkers=['gcc', 'cppcheck']
+    let g:syntastic_vim_checkers=['vint']
+    let g:syntastic_vim_vint_quiet_messages={ 'level': 'warning' }
 endif
 
 " gitgutter
