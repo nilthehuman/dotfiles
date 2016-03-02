@@ -37,8 +37,10 @@ if has('syntax')
     endif
 
     " highlight whitespace characters at the end of each line
-    highlight default link TrailingWhitespace ErrorMsg
-    au BufWrite * match TrailingWhitespace '\V\s\+\$'
+    highlight default TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
+    au BufRead     * match TrailingWhitespace '\V\s\+\$'
+    au BufWrite    * match TrailingWhitespace '\V\s\+\$'
+    au InsertEnter * match none
 endif
 " }}} Syntax and Colors
 
@@ -288,6 +290,8 @@ endif
 
 " Airline {{{
 if !empty(glob(vimdir . '/bundle/vim-airline'))
+    highlight clear TrailingWhitespace
+    highlight link  TrailingWhitespace airline_warning
     set noshowmode
     let g:airline#extensions#tabline#enabled=1
 endif
