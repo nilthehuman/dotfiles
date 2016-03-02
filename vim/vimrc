@@ -36,6 +36,9 @@ if has('syntax')
         colorscheme solarized
     endif
 
+    " highlight whitespace characters at the end of each line
+    highlight default link TrailingWhitespace ErrorMsg
+    au BufWrite * match TrailingWhitespace '\V\s\+\$'
 endif
 " }}} Syntax and Colors
 
