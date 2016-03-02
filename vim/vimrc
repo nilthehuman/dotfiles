@@ -15,6 +15,12 @@ endif
 if has('syntax')
     syntax on
 
+    " leave syntax highlight alone
+    au ColorScheme * highlight DiffAdd    ctermfg=none guifg=none
+    au ColorScheme * highlight DiffChange ctermfg=none guifg=none
+    au ColorScheme * highlight DiffDelete ctermfg=none guifg=none
+    au ColorScheme * highlight DiffText   ctermfg=none guifg=none
+
     let terminator_profile=$PROFILE
     " Settings to accomodate each colorscheme
     if terminator_profile ==? '' || terminator_profile ==? 'default'
@@ -30,11 +36,6 @@ if has('syntax')
         colorscheme solarized
     endif
 
-    " leave syntax highlight alone
-    highlight DiffAdd    ctermfg=none guifg=none
-    highlight DiffChange ctermfg=none guifg=none
-    highlight DiffDelete ctermfg=none guifg=none
-    highlight DiffText   ctermfg=none guifg=none
 endif
 " }}} Syntax and Colors
 
