@@ -21,3 +21,5 @@
 	showroot = true
 [diff]
 	algorithm = patience
+[credential]
+	helper = cache
