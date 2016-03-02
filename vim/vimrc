@@ -84,6 +84,7 @@ set hidden " I don't even know what this does but it's supposed to be on
 
 if has('folding')
     set foldmethod=marker
+    set foldlevelstart=99
 endif
 " }}} User Interface
 
