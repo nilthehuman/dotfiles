@@ -2,7 +2,7 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -l -h'
 
-alias g='git status'
+alias g='git status -sb'
 
 alias m='time make'
 

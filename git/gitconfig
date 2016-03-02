@@ -14,7 +14,7 @@
 	ds = diff --minimal --word-diff --staged
 	l = log -n 20 --graph --oneline --decorate=short
 	ls = log --summary
-	s = status
+	s = status -sb
 [log]
 	date = short
 	decorate = short
