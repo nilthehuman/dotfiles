@@ -229,6 +229,9 @@ nmap <C-k> "_dd
 vmap <C-k> "_d
 
 nnoremap Y y$
+
+inoremap <C-l> <C-x><C-l>
+inoremap <C-f> <C-x><C-f>
 " }}} Editing
 
 " Windows and Tabs {{{
