@@ -1,3 +1,5 @@
+# vim: set filetype=sh :
+
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l -h'
