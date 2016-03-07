@@ -6,8 +6,25 @@ alias ll='ls -l -h'
 
 alias g='git status -sb'
 
+# TODO: hide function itself from user, only expose alias
+function ghcCompileAndCleanup {
+    OUTPUTDIR="ghc_intermediate_files"
+    EXISTED=0
+    if [[ -d "$OUTPUTDIR" ]]; then
+        EXISTED=1
+    fi
+    ghc -outputdir "$OUTPUTDIR" $@
+    # TODO: figure out how to use test -a
+    if [[ 0 -eq $EXISTED ]]; then
+        rm -rf "$OUTPUTDIR"
+    fi
+}
+alias ghc='ghcCompileAndCleanup'
+alias rh='runhaskell'
+
 alias m='time make'
 
+# TODO: see TODO above
 function pingcheck {
     if ping -c 1 -w 1 -W 1 vanenet.hu >& /dev/null; then
         echo "Internet connection is working. :)"
