@@ -15,7 +15,7 @@ function pingcheck {
         return 1
     fi
 }
-alias p='pingcheck'
+alias p='time pingcheck'
 
 alias up='sudo apt-get update && sudo apt-get upgrade --yes'
 
