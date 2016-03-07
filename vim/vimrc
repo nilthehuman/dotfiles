@@ -166,6 +166,7 @@ set textwidth=80
 set wrap
 set scrolloff=1
 set formatoptions+=jn
+set formatoptions-=ro
 
 set autoindent
 set cindent " not sure about this one yet
