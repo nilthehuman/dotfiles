@@ -330,6 +330,8 @@ if !empty(glob(vimdir . '/bundle/syntastic'))
     let g:syntastic_check_on_wq = 0
 
     let g:syntastic_cpp_checkers=['gcc', 'cppcheck']
+    let g:syntastic_haskell_checkers=['hlint']
+    let g:syntastic_haskell_hlint_args="--hint=Default --hint=Dollar --hint=Generalise"
     let g:syntastic_vim_checkers=['vint']
     let g:syntastic_vim_vint_quiet_messages={ 'level': 'warning' }
 endif
