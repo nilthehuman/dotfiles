@@ -136,6 +136,8 @@ if has('persistent_undo')
     execute 'set undodir=' . vimdir . '/undo'
 endif
 execute 'set directory=' . vimdir . '/swap'
+set nobackup
+set nowritebackup
 
 set sessionoptions-=options
 " }}} Persistence
