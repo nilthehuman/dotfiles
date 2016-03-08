@@ -82,7 +82,7 @@ set numberwidth=5
 
 set laststatus=2
 
-set lazyredraw
+set nolazyredraw
 
 set splitright
 set splitbelow

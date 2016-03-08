@@ -23,6 +23,7 @@ declare -a linkdirs=(
     "~/.vim"
     "~/.vim/after"
     "~/.vim/after/ftplugin"
+    "~/.vim/after/plugin"
 )
 declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="~/.bash_aliases"
@@ -33,6 +34,7 @@ declare -A links=(
     ["${DOTFILESDIR}/terminator/config"]="~/.config/terminator/config"
     ["${DOTFILESDIR}/vim/vimrc"]="~/.vim/vimrc"
     ["${DOTFILESDIR}/vim/after/ftplugin/formatoptions.vim"]="~/.vim/after/ftplugin/formatoptions.vim"
+    ["${DOTFILESDIR}/vim/after/plugin/lazyredraw.vim"]="~/.vim/after/plugin/lazyredraw.vim"
 )
 
 for linkdir in "${linkdirs[@]}"; do
