@@ -21,6 +21,8 @@ declare -a linkdirs=(
     "~/.config/openbox"
     "~/.config/terminator"
     "~/.vim"
+    "~/.vim/after"
+    "~/.vim/after/ftplugin"
 )
 declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="~/.bash_aliases"
@@ -30,6 +32,7 @@ declare -A links=(
     ["${DOTFILESDIR}/openbox/autostart"]="~/.config/openbox/autostart"
     ["${DOTFILESDIR}/terminator/config"]="~/.config/terminator/config"
     ["${DOTFILESDIR}/vim/vimrc"]="~/.vim/vimrc"
+    ["${DOTFILESDIR}/vim/after/ftplugin/formatoptions.vim"]="~/.vim/after/ftplugin/formatoptions.vim"
 )
 
 for linkdir in "${linkdirs[@]}"; do
