@@ -20,6 +20,7 @@ declare -a linkdirs=(
     "~/.config"
     "~/.config/openbox"
     "~/.config/terminator"
+    "~/.ghc"
     "~/.vim"
     "~/.vim/after"
     "~/.vim/after/ftplugin"
@@ -28,6 +29,7 @@ declare -a linkdirs=(
 declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="~/.bash_aliases"
     ["${DOTFILESDIR}/bash/bashrc"]="~/.bashrc"
+    ["${DOTFILESDIR}/ghc/ghci.conf"]="~/.ghc/ghci.conf"
     ["${DOTFILESDIR}/git/gitconfig"]="~/.gitconfig"
     ["${DOTFILESDIR}/openbox/rc.xml"]="~/.config/openbox/rc.xml"
     ["${DOTFILESDIR}/openbox/autostart"]="~/.config/openbox/autostart"
