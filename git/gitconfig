@@ -23,3 +23,5 @@
 	algorithm = patience
 [credential]
 	helper = cache
+[push]
+	default = simple
