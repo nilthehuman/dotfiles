@@ -39,9 +39,8 @@
          following: 'Mouse' - where the mouse is, or
                     'Active' - where the active window is -->
   </placement>
-
   <theme>
-    <name>Bunsen</name>
+    <name>Onyx-Citrus</name>
     <titleLayout>DSLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -53,7 +52,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Liberation Sans</name>
