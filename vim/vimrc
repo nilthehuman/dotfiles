@@ -64,8 +64,13 @@ set showmatch
 let mapleader=' '
 
 if has('autocmd')
-  " return cursor to where you left off last time
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$') | exe "normal! g'\"zz" | endif
+    " return cursor to where you left off last time
+    function RestoreCursorPosition()
+        if line("'\"") > 1 && line("'\"") <= line('$')
+            normal! g'"zz
+        endif
+    endfunction
+    au BufReadPost * call RestoreCursorPosition()
 endif
 " }}} Basic Settings
 
