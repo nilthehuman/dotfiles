@@ -250,7 +250,7 @@ inoremap <C-f> <C-x><C-f>
 " }}} Editing
 
 " Windows and Tabs {{{
-map <C-s> :vsplit<CR>
+map <silent> <C-s> :vsplit<CR>
 map <Tab> <C-w>w
 " Tab is the same as C-i. We're going to need a replacement to navigate the jumplist
 nnoremap <C-n> <C-i>
@@ -283,9 +283,9 @@ nnoremap ZZ :wqa<CR>
 " NERDTree {{{
 if !empty(glob(vimdir . '/bundle/nerdtree'))
     " TODO: do something about the startup lag
-    nnoremap Q :NERDTreeToggle<CR>
-    nnoremap <leader>n :NERDTreeToggle<CR>
-    nnoremap <leader>m :NERDTreeFind<CR>
+    nnoremap <silent> Q :NERDTreeToggle<CR>
+    nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+    nnoremap <silent> <leader>m :NERDTreeFind<CR>
     " open NERDTree if no files were specified
     if has('autocmd')
         autocmd StdinReadPre * let s:std_in=1
@@ -297,7 +297,7 @@ endif
 
 " Tagbar {{{
 if !empty(glob(vimdir . '/bundle/tagbar'))
-    noremap <leader>l :TagbarToggle<CR>
+    noremap <silent> <leader>l :TagbarToggle<CR>
 endif
 " }}} Tagbar
 
@@ -321,7 +321,7 @@ endif
 
 " Gundo {{{
 if !empty(glob(vimdir . '/bundle/gundo.vim'))
-    nnoremap <leader>g :GundoToggle<CR>
+    nnoremap <silent> <leader>g :GundoToggle<CR>
     let g:gundo_width=50
 endif
 " }}} Gundo
