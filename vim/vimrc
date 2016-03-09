@@ -89,7 +89,11 @@ set lazyredraw
 if has('autocmd')
     set nolazyredraw
     function SetForGood(option, value)
-        execute 'set ' . a:option . ' ' . a:value
+        if '' == a:value
+            execute 'set ' . a:option
+        else
+            execute 'set ' . a:option . '=' . a:value
+        endif
         au! CursorHold *
     endfunction
     au CursorHold * call SetForGood('lazyredraw', '')
