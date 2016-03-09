@@ -328,6 +328,7 @@ endif
 
 " Ctrl-P {{{
 if !empty(glob(vimdir . '/bundle/ctrlp.vim'))
+    let g:ctrlp_cmd='CtrlPMRUFiles'
     let g:ctrlp_match_window='bottom,order:btt,min:10,max:10'
     let g:ctrlp_show_hidden=1
     let g:ctrlp_switch_buffer='Et'
