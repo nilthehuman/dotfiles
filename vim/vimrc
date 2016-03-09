@@ -82,7 +82,15 @@ set numberwidth=5
 
 set laststatus=2
 
-set nolazyredraw
+set lazyredraw
+if has('autocmd')
+    set nolazyredraw
+    function SetForGood(option, value)
+        execute 'set ' . a:option . ' ' . a:value
+        au! CursorHold *
+    endfunction
+    au CursorHold * call SetForGood('lazyredraw', '')
+endif
 
 set splitright
 set splitbelow
