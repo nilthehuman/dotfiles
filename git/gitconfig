@@ -21,6 +21,8 @@
 	showroot = true
 [diff]
 	algorithm = patience
+[color "decorate"]
+	HEAD = red
 [credential]
 	helper = cache
 [push]
