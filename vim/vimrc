@@ -423,5 +423,12 @@ if !empty(glob(vimdir . '/bundle/vim-autoclose'))
 endif
 " }}} AutoClose
 
+" commentary.vim {{{
+if !empty(glob(vimdir . '/bundle/vim-commentary'))
+    nmap <C-c> gcc
+    vmap <C-c> gc
+endif
+" }}} commentary.vim
+
 " }}} Plugin Configuration
 
