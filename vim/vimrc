@@ -185,6 +185,9 @@ set scrolloff=1
 
 set autoindent
 set cindent " not sure about this one yet
+
+au FileType * set formatoptions+=jn
+au FileType * set formatoptions-=ro
 " }}} Code Formatting
 
 

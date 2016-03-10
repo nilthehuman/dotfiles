@@ -22,19 +22,16 @@ declare -a linkdirs=(
     "${HOME}/.config/terminator"
     "${HOME}/.ghc"
     "${HOME}/.vim"
-    "${HOME}/.vim/after"
-    "${HOME}/.vim/after/ftplugin"
 )
 declare -A links=(
-    ["${DOTFILESDIR}/bash/bash_aliases"]                    = "${HOME}/.bash_aliases"
-    ["${DOTFILESDIR}/bash/bashrc"]                          = "${HOME}/.bashrc"
-    ["${DOTFILESDIR}/ghc/ghci.conf"]                        = "${HOME}/.ghc/ghci.conf"
-    ["${DOTFILESDIR}/git/gitconfig"]                        = "${HOME}/.gitconfig"
-    ["${DOTFILESDIR}/openbox/rc.xml"]                       = "${HOME}/.config/openbox/rc.xml"
-    ["${DOTFILESDIR}/openbox/autostart"]                    = "${HOME}/.config/openbox/autostart"
-    ["${DOTFILESDIR}/terminator/config"]                    = "${HOME}/.config/terminator/config"
-    ["${DOTFILESDIR}/vim/vimrc"]                            = "${HOME}/.vim/vimrc"
-    ["${DOTFILESDIR}/vim/after/ftplugin/formatoptions.vim"] = "${HOME}/.vim/after/ftplugin/formatoptions.vim"
+["${DOTFILESDIR}/bash/bash_aliases"] = "${HOME}/.bash_aliases"
+["${DOTFILESDIR}/bash/bashrc"]       = "${HOME}/.bashrc"
+["${DOTFILESDIR}/ghc/ghci.conf"]     = "${HOME}/.ghc/ghci.conf"
+["${DOTFILESDIR}/git/gitconfig"]     = "${HOME}/.gitconfig"
+["${DOTFILESDIR}/openbox/rc.xml"]    = "${HOME}/.config/openbox/rc.xml"
+["${DOTFILESDIR}/openbox/autostart"] = "${HOME}/.config/openbox/autostart"
+["${DOTFILESDIR}/terminator/config"] = "${HOME}/.config/terminator/config"
+["${DOTFILESDIR}/vim/vimrc"]         = "${HOME}/.vim/vimrc"
 )
 
 for linkdir in "${linkdirs[@]}"; do
