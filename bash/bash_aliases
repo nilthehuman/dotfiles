@@ -24,6 +24,18 @@ alias rh='runhaskell'
 
 alias m='time make'
 
+# from https://wiki.archlinux.org/index.php/man_page#Colored_man_pages
+function man {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
 # TODO: see TODO above
 function pingcheck {
     if ping -c 1 -w 1 -W 1 vanenet.hu >& /dev/null; then
