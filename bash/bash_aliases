@@ -5,6 +5,7 @@ alias la='ls -a'
 alias ll='ls -l -h'
 
 alias g='git status -sb'
+alias grepos='find $HOME -type d -name ".git" -not -path "*\.cabal*" -not -path "*\.stack*" -not -path "*\.vim*"| sed "s#/\.git##" | more'
 
 # TODO: hide function itself from user, only expose alias
 function ghcCompileAndCleanup {
