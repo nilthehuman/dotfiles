@@ -24,6 +24,9 @@ alias rh='runhaskell'
 
 alias m='time make'
 
+# clobbering mv is stupid
+alias mv='mv --no-clobber'
+
 # from https://wiki.archlinux.org/index.php/man_page#Colored_man_pages
 function man {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -47,6 +50,9 @@ function pingcheck {
     fi
 }
 alias p='time pingcheck'
+
+alias rm="echo \"Use 'trash' instead\" #"
+alias rm!='\rm'
 
 alias up='sudo apt-get update && sudo apt-get upgrade --yes'
 
