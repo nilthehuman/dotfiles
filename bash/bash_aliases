@@ -1,5 +1,11 @@
 # vim: set filetype=sh :
 
+# easier navigation from github.com/samstoller/.dotfiles/
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l -h'
