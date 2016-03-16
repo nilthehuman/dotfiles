@@ -9,6 +9,7 @@ echo "This script will create symlinks in your ~ directory"
 echo "to the files in the dotfiles directory."
 read -p "Do you wish to proceed? (Y/n) " USERINPUT
 if [ "$USERINPUT" != "Y" ]; then
+    unset USERINPUT
     echo "Abort."
     exit 0;
 fi
@@ -40,6 +41,8 @@ done
 for dotfile in "${!links[@]}"; do
     ln -s $dotfile ${links["$dotfile"]};
 done
+
+unset USERINPUT DOTFILESDIR linkdirs links linkdir dotfile
 
 echo "Done."
 
