@@ -60,6 +60,7 @@ set timeoutlen=150
 set backspace=indent,start
 
 set showmatch
+set matchtime=3
 
 let mapleader=' '
 
@@ -84,6 +85,8 @@ set norelativenumber
 set numberwidth=5
 
 set laststatus=2
+
+set title
 
 set lazyredraw
 if has('autocmd')
@@ -188,6 +191,8 @@ set cindent " not sure about this one yet
 
 au FileType * set formatoptions+=jn
 au FileType * set formatoptions-=ro
+
+au Filetype gitcommit setlocal spell
 " }}} Code Formatting
 
 
