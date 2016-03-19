@@ -230,6 +230,8 @@ nnoremap ( T(vib
 " visually select last edited/pasted text (from github.com/iamvery/dotfiles)
 nnoremap gV `[v`]
 
+" go to definition as in Visual Studio (try both global declaration and tag jump)
+nnoremap <C-g> gDg]
 " swap commands for link navigation in online help
 nnoremap <C-t> <C-]>
 nnoremap <C-]> <C-t>
