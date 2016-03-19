@@ -28,6 +28,10 @@ function ghcCompileAndCleanup {
 }
 alias ghc='ghcCompileAndCleanup'
 alias rh='runhaskell'
+function pointfreeUniqueLines {
+    pointfree --verbose "$@" | awk '!seen[$0]++' -
+}
+alias pf='pointfreeUniqueLines'
 
 alias m='time make'
 
