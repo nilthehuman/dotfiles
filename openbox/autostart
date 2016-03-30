@@ -41,9 +41,6 @@ bl-compositor --start &
 ## Volume keys daemon
 xfce4-volumed &
 
-## Start Clipboard manager
-(sleep 3; clipit) &
-
 ## Start Thunar Daemon, if set as bl-file-manager
 if [ "$(readlink -f $(which bl-file-manager))" = "$(which thunar)" ]
 then
