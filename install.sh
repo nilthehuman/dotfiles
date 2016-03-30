@@ -29,6 +29,7 @@ declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="${HOME}/.bash_aliases"
     ["${DOTFILESDIR}/bash/bashrc"]="${HOME}/.bashrc"
     ["${DOTFILESDIR}/dmenu/dmenu-bind.sh"]="${HOME}/.config/dmenu/dmenu-bind.sh"
+    ["${DOTFILESDIR}/compton/compton.conf"]="${HOME}/.config/compton.conf"
     ["${DOTFILESDIR}/conky/conkyrc"]="${HOME}/.conkyrc"
     ["${DOTFILESDIR}/ghc/ghci.conf"]="${HOME}/.ghc/ghci.conf"
     ["${DOTFILESDIR}/git/gitconfig"]="${HOME}/.gitconfig"
