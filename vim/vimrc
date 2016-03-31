@@ -66,12 +66,12 @@ let mapleader=' '
 
 if has('autocmd')
     " return cursor to where you left off last time
-    function RestoreCursorPosition()
+    function s:RestoreCursorPosition()
         if line("'\"") > 1 && line("'\"") <= line('$')
             normal! g'"zz
         endif
     endfunction
-    au BufReadPost * call RestoreCursorPosition()
+    au BufReadPost * call <SID>RestoreCursorPosition()
 endif
 " }}} Basic Settings
 
@@ -91,7 +91,7 @@ set title
 set lazyredraw
 if has('autocmd')
     set nolazyredraw
-    function SetForGood(option, value)
+    function s:SetForGood(option, value)
         if '' == a:value
             execute 'set ' . a:option
         else
@@ -99,7 +99,7 @@ if has('autocmd')
         endif
         au! CursorHold *
     endfunction
-    au CursorHold * call SetForGood('lazyredraw', '')
+    au CursorHold * call <SID>SetForGood('lazyredraw', '')
 endif
 
 set splitright
