@@ -29,16 +29,17 @@ alias cmdi='committandi'
 
 # TODO: hide function itself from user, only expose alias
 function ghcCompileAndCleanup {
-    OUTPUTDIR="ghc_intermediate_files"
-    EXISTED=0
-    if [[ -d "$OUTPUTDIR" ]]; then
-        EXISTED=1
+    outputdir="ghc_intermediate_files"
+    existed=0
+    if [[ -d "$outputdir" ]]; then
+        existed=1
     fi
-    ghc -W -outputdir "$OUTPUTDIR" $@
+    ghc -W -outputdir "$outputdir" $@
     # TODO: figure out how to use test -a
-    if [[ 0 -eq $EXISTED ]]; then
-        rm -rf "$OUTPUTDIR"
+    if [[ 0 -eq $existed ]]; then
+        rm -rf "$outputdir"
     fi
+    unset outputdir existed
 }
 alias ghc='ghcCompileAndCleanup'
 alias rh='runhaskell'
