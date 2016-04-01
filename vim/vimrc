@@ -240,14 +240,14 @@ nnoremap <C-]> <C-t>
 " this hack makes G jump to and fro between the first and last lines
 if exists(':function')
     function s:ToggleG()
-        if ( line('$') == line('.') )
-            normal! gg
+        if ( 0 == v:count && line('$') == line('.') )
+            return 'gg'
         else
-            normal! G
-        end
+            return 'G'
+        endif
     endfunction
-    noremap G :call <SID>ToggleG()<CR>
-end
+    nnoremap <expr> G <SID>ToggleG()
+endif
 " }}} Navigation
 
 " Editing {{{
