@@ -20,7 +20,7 @@ function ghcCompileAndCleanup {
     if [[ -d "$OUTPUTDIR" ]]; then
         EXISTED=1
     fi
-    ghc -outputdir "$OUTPUTDIR" $@
+    ghc -W -outputdir "$OUTPUTDIR" $@
     # TODO: figure out how to use test -a
     if [[ 0 -eq $EXISTED ]]; then
         rm -rf "$OUTPUTDIR"
