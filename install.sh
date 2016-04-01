@@ -5,13 +5,15 @@ if [ "$BASH_VERSINFO" -lt 4 ]; then
     exit -1;
 fi
 
-echo "This script will create symlinks in your ~ directory"
-echo "to the files in the dotfiles directory."
-read -p "Do you wish to proceed? (Y/n) " USERINPUT
-if [ "$USERINPUT" != "Y" ]; then
-    unset USERINPUT
-    echo "Abort."
-    exit 0;
+if [[ -t 0 ]]; then
+    echo "This script will create symlinks in your ~ directory"
+    echo "to the files in the dotfiles directory."
+    read -p "Do you wish to proceed? (Y/n) " USERINPUT
+    if [ "$USERINPUT" != "Y" ]; then
+        unset USERINPUT
+        echo "Abort."
+        exit 0;
+    fi
 fi
 
 DOTFILESDIR=`dirname $0`
