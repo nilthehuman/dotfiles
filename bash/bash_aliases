@@ -48,6 +48,15 @@ function pointfreeUniqueLines {
 }
 alias pf='pointfreeUniqueLines'
 
+function dispatchIp {
+    if [[ 0 == $# ]]; then
+        curl --silent icanhazip.com
+    else
+        ip $@
+    fi
+}
+alias ip='dispatchIp'
+
 alias m='time make'
 
 # clobbering mv is stupid
