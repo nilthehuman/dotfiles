@@ -403,7 +403,7 @@
         <command>~/.config/dmenu/dmenu-bind.sh</command>
       </action>
     </keybind>
-    <keybind key="W-r">
+    <keybind key="W-p">
       <action name="Execute">
         <startupnotify>
           <enabled>false</enabled>
