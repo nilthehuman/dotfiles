@@ -164,7 +164,7 @@ set sessionoptions-=options
 
 " Wildmenu {{{
 set wildmenu
-set wildignore+=*.o
+set wildignore+=*.o,*.out,*.obj
 set wildignore+=*.bmp,*.gif,*.jpg,*.jpeg,*.png,*.ppm
 set wildignore+=*.odt,*.ods,*.odp,*.doc,*.docx,*.xls,*.ppt
 set wildignore+=*.pdf,*.djvu,*.djv
@@ -172,7 +172,7 @@ set wildignore+=*.flac,*.mp3,*.ogg,*.wav
 set wildignore+=*.avi,*.mkv,*.mov,*.mpg,*.mpeg,*.mp4,*.ogv,*.wmv
 set wildignore+=*.flv,*.swf
 set wildignore+=*.so,*.swp
-set wildignore+=*.tar.gz,*.tgz,*.7z,*.zip
+set wildignore+=*.tar.bz2,*.tar.gz,*.tgz,*.tar.xz,*.7z,*.rar,*.zip
 " }}} Wildmenu
 
 
