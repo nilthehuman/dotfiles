@@ -8,8 +8,8 @@ fi
 if [[ -t 0 ]]; then
     echo "This script will create symlinks in your ~ directory"
     echo "to the files in the dotfiles directory."
-    read -p "Do you wish to proceed? (Y/n) " USERINPUT
-    if [ "$USERINPUT" != "Y" ]; then
+    read -p "Do you wish to proceed? (y/N) " USERINPUT
+    if [ "$USERINPUT" != "y" ]; then
         unset USERINPUT
         echo "Abort."
         exit 0;
