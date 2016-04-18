@@ -29,11 +29,26 @@ if has('syntax')
         set cursorline
         set cursorcolumn
         colorscheme ir_black
+
+        highlight SyntasticError             cterm=bold ctermfg=214 ctermbg=160
+        highlight SyntasticWarning           cterm=bold ctermfg=220 ctermbg=166
+        highlight link SyntasticStyleError   SyntasticError
+        highlight link SyntasticStyleWarning SyntasticWarning
+
+        highlight SyntasticErrorSign         cterm=bold ctermfg=160 ctermbg=none
+        highlight SyntasticWarningSign       cterm=bold ctermfg=166 ctermbg=none
+        highlight link SyntasticStyleErrorSign   SyntasticErrorSign
+        highlight link SyntasticStyleWarningSign SyntasticWarningSign
     endif
     if terminator_profile ==? 'solarized'
         set t_Co=16
         set background=dark
         colorscheme solarized
+
+        highlight SyntasticError             ctermfg=015 ctermbg=009
+        highlight SyntasticWarning           ctermfg=015 ctermbg=010
+        highlight link SyntasticStyleError   SyntasticError
+        highlight link SyntasticStyleWarning SyntasticWarning
     endif
 
     " highlight whitespace characters at the end of each line
