@@ -98,3 +98,5 @@ bind TAB:menu-complete
 # enable autojump
 . /usr/share/autojump/autojump.sh
 
+# tell node where to look for npm modules
+export NODE_PATH=/usr/lib/node_modules/
