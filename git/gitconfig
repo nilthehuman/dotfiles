@@ -12,6 +12,7 @@
 	co = checkout
 	d = diff --minimal --word-diff
 	ds = diff --minimal --word-diff --staged
+    h = log -n 20 --graph --oneline --decorate=short
 	l = log -n 20 --graph --oneline --decorate=short
 	ls = log --summary
 	s = status -sb
