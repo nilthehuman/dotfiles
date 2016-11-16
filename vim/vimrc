@@ -237,8 +237,8 @@ noremap É ,
 noremap j gj
 noremap k gk
 
-noremap J L10k
-noremap K H10j
+noremap J L8k
+noremap K H8j
 
 " jump inside brackets
 " improve these to use /(.\{-}) later
