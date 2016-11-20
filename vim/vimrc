@@ -282,6 +282,8 @@ nnoremap Y y$
 
 inoremap <C-l> <C-x><C-l>
 inoremap <C-f> <C-x><C-f>
+
+nnoremap EA Ea
 " }}} Editing
 
 " Windows and Tabs {{{
