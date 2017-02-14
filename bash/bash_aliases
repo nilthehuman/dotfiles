@@ -85,6 +85,8 @@ alias m='time make'
 
 # clobbering mv is stupid
 alias mv='mv --no-clobber'
+# why the fuck does cp clobber by default, I can't take this bullshit
+alias cp='cp --no-clobber'
 
 # from https://wiki.archlinux.org/index.php/man_page#Colored_man_pages
 function man {
