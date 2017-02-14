@@ -65,6 +65,7 @@ function ghcCompileAndCleanup {
     unset outputdir existed
 }
 alias ghc='ghcCompileAndCleanup'
+alias ghci='ghci +RTS -M200M -RTS'
 alias rh='runhaskell'
 function pointfreeUniqueLines {
     pointfree --verbose "$@" | awk '!seen[$0]++' -
