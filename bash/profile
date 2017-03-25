@@ -30,6 +30,3 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# this was suggested by `stack'
-PATH="$HOME/.local/bin:$PATH"
-

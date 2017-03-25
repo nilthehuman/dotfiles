@@ -100,3 +100,6 @@ bind TAB:menu-complete
 
 # tell node where to look for npm modules
 export NODE_PATH=/usr/lib/node_modules/
+
+# this was suggested by `stack'
+PATH="$HOME/.local/bin:$PATH"
