@@ -26,7 +26,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -96,7 +96,7 @@ stty -ixon
 bind TAB:menu-complete
 
 # enable autojump
-. /usr/share/autojump/autojump.sh
+#. /usr/share/autojump/autojump.sh
 
 # tell node where to look for npm modules
 export NODE_PATH=/usr/lib/node_modules/
