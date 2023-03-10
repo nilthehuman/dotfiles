@@ -403,7 +403,7 @@ if !empty(glob(plugindir . '/vim-gitgutter'))
     set updatetime=150
     let g:gitgutter_diff_args = '--minimal -w'
     let g:gitgutter_sign_column_always = 1
-    if terminator_profile ==? 'solarized'
+    if terminator_profile ==? '' || terminator_profile ==? 'solarized'
         let g:gitgutter_highlight_lines = 1
     endif
 endif
