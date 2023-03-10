@@ -1,6 +1,6 @@
 " plugins, colorschemes and vimrc are stored here:
 let vimdir = '~/.vim'
-
+let plugindir = vimdir . '/pack/plugins/start'
 
 
 if !empty(glob(vimdir . '/autoload/pathogen.vim'))
@@ -317,7 +317,7 @@ nnoremap ZZ :wqa<CR>
 " Plugin Configuration {{{
 
 " NERDTree {{{
-if !empty(glob(vimdir . '/bundle/nerdtree'))
+if !empty(glob(plugindir . '/nerdtree'))
     " TODO: do something about the startup lag
     nnoremap <silent> Q :NERDTreeToggle<CR>
     nnoremap <silent> <leader>n :NERDTreeToggle<CR>
@@ -332,13 +332,13 @@ endif
 " }}} NERDTree
 
 " Tagbar {{{
-if !empty(glob(vimdir . '/bundle/tagbar'))
+if !empty(glob(plugindir . '/tagbar'))
     noremap <silent> <leader>l :TagbarToggle<CR>
 endif
 " }}} Tagbar
 
 " smooth-scroll {{{
-if !empty(glob(vimdir . '/bundle/vim-smooth-scroll'))
+if !empty(glob(plugindir . '/vim-smooth-scroll'))
     noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
     noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
     noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
@@ -347,7 +347,7 @@ endif
 " }}} smooth-scroll
 
 " Airline {{{
-if !empty(glob(vimdir . '/bundle/vim-airline'))
+if !empty(glob(plugindir . '/vim-airline'))
     highlight clear TrailingWhitespace
     highlight link  TrailingWhitespace airline_warning
     set noshowmode
@@ -356,14 +356,14 @@ endif
 " }}} Airline
 
 " Gundo {{{
-if !empty(glob(vimdir . '/bundle/gundo.vim'))
+if !empty(glob(plugindir . '/gundo.vim'))
     nnoremap <silent> <leader>g :GundoToggle<CR>
     let g:gundo_width=50
 endif
 " }}} Gundo
 
 " Ctrl-P {{{
-if !empty(glob(vimdir . '/bundle/ctrlp.vim'))
+if !empty(glob(plugindir . '/ctrlp.vim'))
     let g:ctrlp_cmd='CtrlP'
     let g:ctrlp_match_window='bottom,order:btt,min:10,max:10'
     let g:ctrlp_show_hidden=1
@@ -373,14 +373,17 @@ endif
 " }}} Ctrl-P
 
 " Ag, The Silver Searcher {{{
-if !empty(glob(vimdir . '/bundle/ag.vim'))
-    let g:ag_working_path_mode='r'
-    noremap <leader>a :Ag 
+if !empty(glob(plugindir . '/ack.vim'))
+    let g:ackprg = 'grep'
+    if executable('ag')
+        let g:ackprg = 'ag --vimgrep'
+    endif
+    noremap <leader>a :Ack!<Space>
 endif
 " }}} Ag, The Silver Searcher
 
 " Syntastic! {{{
-if !empty(glob(vimdir . '/bundle/syntastic'))
+if !empty(glob(plugindir . '/syntastic'))
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_check_on_open = 0
     let g:syntastic_check_on_wq = 0
@@ -395,7 +398,7 @@ endif
 " }}} Syntastic!
 
 " gitgutter {{{
-if !empty(glob(vimdir . '/bundle/vim-gitgutter'))
+if !empty(glob(plugindir . '/vim-gitgutter'))
     set numberwidth=1 " override previous setting
     set updatetime=150
     let g:gitgutter_diff_args = '--minimal -w'
@@ -407,12 +410,12 @@ endif
 " }}} gitgutter
 
 " EasyMotion {{{
-"if !empty(glob(vimdir . '/bundle/vim-easymotion'))
+"if !empty(glob(plugindir . '/vim-easymotion'))
 " TODO!
 " }}} EasyMotion
 
 " Rainbow Parentheses {{{
-if !empty(glob(vimdir . '/bundle/rainbow_parentheses.vim'))
+if !empty(glob(plugindir . '/rainbow_parentheses.vim'))
     " mix up the colors so they're more distinct
     " also, darkgray is invisible in solarized
     let g:rbpt_colorpairs = [
@@ -445,7 +448,7 @@ endif
 " }}} Rainbow Parentheses
 
 " dragvisuals.vim {{{
-if !empty(glob(vimdir . '/bundle/dragvisuals.vim'))
+if !empty(glob(plugindir . '/dragvisuals.vim'))
     vmap <expr> <C-Left>  DVB_Drag('left')
     vmap <expr> <C-Right> DVB_Drag('right')
     vmap <expr> <C-Down>  DVB_Drag('down')
@@ -455,13 +458,13 @@ endif
 " }}} dragvisuals.vim
 
 " AutoClose {{{
-if !empty(glob(vimdir . '/bundle/vim-autoclose'))
+if !empty(glob(plugindir . '/vim-autoclose'))
     let g:autoclose_vim_commentmode = 1
 endif
 " }}} AutoClose
 
 " commentary.vim {{{
-if !empty(glob(vimdir . '/bundle/vim-commentary'))
+if !empty(glob(plugindir . '/vim-commentary'))
     nmap <C-c> gcc
     vmap <C-c> gc
 endif
