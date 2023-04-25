@@ -159,13 +159,13 @@ ${hr}
 [Alt] + F3${alignr}Alt Menu
 [S] + Space${alignr}Main Menu
 [S] + Tab${alignr}Client Menu
-[S] + t${alignr}Terminal
+[S] + a${alignr}Terminal
 [S] + f${alignr}File Manager
 [S] + e${alignr}Editor
-[S] + m${alignr}Media Player
+[S] + v${alignr}VLC
 [S] + w${alignr}Web Browser
-[S] + h${alignr}Task Manager
+[S] + h${alignr}htop
 [S] + l${alignr}Lock Screen
-[S] + v${alignr}Volume Control
-[S] + x${alignr}Logout
+[S] + p${alignr}Volume Control
+[S] + q${alignr}Logout
 [PrtSc]${alignr}Screenshot
