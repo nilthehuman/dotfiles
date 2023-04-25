@@ -2,7 +2,7 @@
 	name = Dániel Arató
 	email = nil.the.human@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 [alias]
 	a = add
 	ap = add -p
