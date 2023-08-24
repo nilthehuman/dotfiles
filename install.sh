@@ -35,6 +35,7 @@ declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="${HOME}/.bash_aliases"
     ["${DOTFILESDIR}/bash/bashrc"]="${HOME}/.bashrc"
     ["${DOTFILESDIR}/bash/profile"]="${HOME}/.profile"
+    ["${DOTFILESDIR}/X/.xbindkeysrc"]="${HOME}/.xbindkeysrc"
     ["${DOTFILESDIR}/arbtt/categorize.cfg"]="${HOME}/.arbtt/categorize.cfg"
     ["${DOTFILESDIR}/conky/conkyrc"]="${HOME}/.conkyrc"
     ["${DOTFILESDIR}/dmenu/dmenu-bind.sh"]="${HOME}/.config/dmenu/dmenu-bind.sh"
