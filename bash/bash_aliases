@@ -129,3 +129,5 @@ alias xboard='xboard -initialMode Analysis -absoluteAnalysisScores true -scoreWh
 alias exa='exa --long --git --sort type --classify --ignore-glob="*pycache*"'
 alias exaa='exa --all --all'
 alias tree='\exa --tree'
+
+alias as='arbtt-stats --min-percentage=0 --output-exclude=Program:'
