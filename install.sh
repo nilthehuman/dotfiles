@@ -22,6 +22,7 @@ DOTFILESDIR=`readlink -f $DOTFILESDIR` # get absolute path
 declare -a linkdirs=(
     "${HOME}/.config"
     "${HOME}/.config/dmenu"
+    "${HOME}/.config/lxterminal"
     "${HOME}/.config/openbox"
     "${HOME}/.config/terminator"
     "${HOME}/.config/tint2"
@@ -39,6 +40,7 @@ declare -A links=(
     ["${DOTFILESDIR}/ghc/ghci.conf"]="${HOME}/.ghc/ghci.conf"
     ["${DOTFILESDIR}/git/gitconfig"]="${HOME}/.gitconfig"
     ["${DOTFILESDIR}/jshint/jshintrc"]="${HOME}/.jshintrc"
+    ["${DOTFILESDIR}/lxterminal/lxterminal.conf"]="${HOME}/.config/lxterminal/lxterminal.conf"
     ["${DOTFILESDIR}/openbox/rc.xml"]="${HOME}/.config/openbox/rc.xml"
     ["${DOTFILESDIR}/openbox/autostart"]="${HOME}/.config/openbox/autostart"
     ["${DOTFILESDIR}/terminator/config"]="${HOME}/.config/terminator/config"
