@@ -24,6 +24,7 @@ declare -a linkdirs=(
     "${HOME}/.config/dmenu"
     "${HOME}/.config/openbox"
     "${HOME}/.config/terminator"
+    "${HOME}/.config/tint2"
     "${HOME}/.ghc"
     "${HOME}/.vim"
 )
@@ -41,6 +42,7 @@ declare -A links=(
     ["${DOTFILESDIR}/openbox/rc.xml"]="${HOME}/.config/openbox/rc.xml"
     ["${DOTFILESDIR}/openbox/autostart"]="${HOME}/.config/openbox/autostart"
     ["${DOTFILESDIR}/terminator/config"]="${HOME}/.config/terminator/config"
+    ["${DOTFILESDIR}/tint2/tint2rc"]="${HOME}/.config/tint2/tint2rc"
     ["${DOTFILESDIR}/vim/vimrc"]="${HOME}/.vim/vimrc"
 )
 
