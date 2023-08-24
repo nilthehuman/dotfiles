@@ -20,6 +20,7 @@ DOTFILESDIR=`dirname $0`
 DOTFILESDIR=`readlink -f $DOTFILESDIR` # get absolute path
 
 declare -a linkdirs=(
+    "${HOME}/.arbtt"
     "${HOME}/.config"
     "${HOME}/.config/dmenu"
     "${HOME}/.config/lxterminal"
@@ -34,7 +35,7 @@ declare -A links=(
     ["${DOTFILESDIR}/bash/bash_aliases"]="${HOME}/.bash_aliases"
     ["${DOTFILESDIR}/bash/bashrc"]="${HOME}/.bashrc"
     ["${DOTFILESDIR}/bash/profile"]="${HOME}/.profile"
-    ["${DOTFILESDIR}/picom/picom.conf"]="${HOME}/.config/picom.conf"
+    ["${DOTFILESDIR}/arbtt/categorize.cfg"]="${HOME}/.arbtt/categorize.cfg"
     ["${DOTFILESDIR}/conky/conkyrc"]="${HOME}/.conkyrc"
     ["${DOTFILESDIR}/dmenu/dmenu-bind.sh"]="${HOME}/.config/dmenu/dmenu-bind.sh"
     ["${DOTFILESDIR}/eslint/eslintrc"]="${HOME}/.eslintrc"
@@ -44,6 +45,7 @@ declare -A links=(
     ["${DOTFILESDIR}/lxterminal/lxterminal.conf"]="${HOME}/.config/lxterminal/lxterminal.conf"
     ["${DOTFILESDIR}/openbox/rc.xml"]="${HOME}/.config/openbox/rc.xml"
     ["${DOTFILESDIR}/openbox/autostart"]="${HOME}/.config/openbox/autostart"
+    ["${DOTFILESDIR}/picom/picom.conf"]="${HOME}/.config/picom.conf"
     ["${DOTFILESDIR}/terminator/config"]="${HOME}/.config/terminator/config"
     ["${DOTFILESDIR}/tint2/tint2rc"]="${HOME}/.config/tint2/tint2rc"
     ["${DOTFILESDIR}/vim/vimrc"]="${HOME}/.vim/vimrc"
