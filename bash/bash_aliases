@@ -126,3 +126,6 @@ alias vi='vim.tiny -C -u NONE'
 alias xb='xboard'
 alias xboard='xboard -initialMode Analysis -absoluteAnalysisScores true -scoreWhite true -fUCI -fcp stockfish -sUCI -scp stockfish'
 
+alias exa='exa --long --git --sort type --classify --ignore-glob="*pycache*"'
+alias exaa='exa --all --all'
+alias tree='\exa --tree'
