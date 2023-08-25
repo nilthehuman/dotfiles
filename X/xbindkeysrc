@@ -110,6 +110,12 @@
 "xdotool key alt+BackSpace"
     Control + BackSpace + Release
 
+# Use special keys to adjust volume
+"pactl set-sink-volume 0 -5%"
+    XF86AudioLowerVolume
+"pactl set-sink-volume 0 +5%"
+    XF86AudioRaiseVolume
+
 # Print Screen (xfce)
 "xfce4-screenshooter"
     Print
