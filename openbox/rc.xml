@@ -325,12 +325,12 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>xfce4-screenshooter</command>
+        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/ ; bl-image-viewer ~/Pictures/screenshots/$f'</command>
+        <command>scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/ ; feh ~/Pictures/screenshots/$f'</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
@@ -445,7 +445,7 @@
           <enabled>false</enabled>
           <name>File Manager</name>
         </startupnotify>
-        <command>bl-file-manager</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -481,7 +481,7 @@
           <enabled>false</enabled>
           <name>Editor</name>
         </startupnotify>
-        <command>bl-text-editor</command>
+        <command>geany</command>
       </action>
     </keybind>
     <keybind key="W-v">
@@ -490,7 +490,7 @@
           <enabled>false</enabled>
           <name>VLC</name>
         </startupnotify>
-        <command>bl-media-player</command>
+        <command>vlc</command>
       </action>
     </keybind>
     <keybind key="W-h">
