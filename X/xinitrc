@@ -1,0 +1,6 @@
+xset b off
+setxkbmap hu
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+xbindkeys -f ~/.xbindkeysrc
+xscreensaver --no-splash &
+exec openbox-session
