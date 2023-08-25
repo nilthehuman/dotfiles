@@ -30,13 +30,14 @@ nitrogen --restore &
 picom -b
 
 ## Start the tint2 session (the default tint2 will run if no sessions have been set)
-(sleep 2s; bl-tint2-session) &
+#(sleep 2s; bl-tint2-session) &
+(sleep 2s; tint2 -c ~/.config/tint2/tint2rc) &
 
 ## Start the Conky session (the default conkyrc will run if no sessions have been set)
-(sleep 2s; bl-conky-session --autostart) &
+#(sleep 2s; bl-conky-session --autostart) &
 
 ## Volume control for systray
-(sleep 2; volti) &
+(sleep 2; volctl) &
 
 ## Volume keys daemon
 xfce4-volumed &
@@ -74,7 +75,7 @@ xset b off &
 
 ## bl-welcome - post-installation script, will not run in a live session and
 ## only runs once. Safe to remove.
-(sleep 10; bl-welcome --firstrun) &
+#(sleep 10; bl-welcome --firstrun) &
 
 ## bl-fortune - have the system come up with a little adage (not yet enabled)
-(sleep 120; bl-fortune) &
+#(sleep 120; bl-fortune) &
