@@ -79,3 +79,5 @@ xset b off &
 
 ## bl-fortune - have the system come up with a little adage (not yet enabled)
 #(sleep 120; bl-fortune) &
+
+arbtt-capture --sample-rate=10 &
