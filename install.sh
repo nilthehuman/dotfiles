@@ -24,6 +24,7 @@ declare -a linkdirs=(
     "${HOME}/.config"
     "${HOME}/.config/dmenu"
     "${HOME}/.config/lxterminal"
+    "${HOME}/.config/nvim"
     "${HOME}/.config/openbox"
     "${HOME}/.config/picom"
     "${HOME}/.config/terminator"
@@ -52,6 +53,7 @@ declare -A links=(
     ["${DOTFILESDIR}/terminator/config"]="${HOME}/.config/terminator/config"
     ["${DOTFILESDIR}/tint2/tint2rc"]="${HOME}/.config/tint2/tint2rc"
     ["${DOTFILESDIR}/vim/vimrc"]="${HOME}/.vim/vimrc"
+    ["${DOTFILESDIR}/vim/vimrc"]="${HOME}/.config/nvim/init.vim"
 )
 
 for linkdir in "${linkdirs[@]}"; do
