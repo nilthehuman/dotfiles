@@ -111,11 +111,11 @@
     Control + BackSpace + Release
 
 # Use special keys to adjust volume
-"pactl set-sink-volume 0 -5%"
+"pactl list sinks short | sed 's/\s.*//' | xargs --replace=SINK pactl set-sink-volume SINK -5%"
     XF86AudioLowerVolume
-"pactl set-sink-volume 0 +5%"
+"pactl list sinks short | sed 's/\s.*//' | xargs --replace=SINK pactl set-sink-volume SINK +5%"
     XF86AudioRaiseVolume
-"pactl set-sink-mute 0 toggle"
+"pactl list sinks short | sed 's/\s.*//' | xargs --replace=SINK pactl set-sink-mute SINK toggle"
     XF86AudioMute
 
 # Print Screen (xfce)
