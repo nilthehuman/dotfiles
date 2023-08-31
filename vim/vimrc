@@ -313,6 +313,29 @@ nnoremap ZZ :wqa<CR>
 " }}} Mappings
 
 
+" Declare plugins {{{
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'altercation/vim-colors-solarized'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'psliwka/vim-smoothie'
+Plug 'vim-airline/vim-airline'
+Plug 'sjl/gundo.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'luochen1990/rainbow'
+Plug 'atweiden/vim-dragvisuals'
+Plug 'Townk/vim-autoclose'
+call plug#end()
+
+" }}} Declare plugins
+
 
 " Plugin Configuration {{{
 
