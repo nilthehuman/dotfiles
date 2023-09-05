@@ -322,7 +322,7 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'psliwka/vim-smoothie'
 Plug 'vim-airline/vim-airline'
-Plug 'sjl/gundo.vim'
+Plug 'simnalamburt/vim-mundo'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-syntastic/syntastic'
@@ -376,12 +376,12 @@ if !empty(glob(plugindir . '/vim-airline'))
 endif
 " }}} Airline
 
-" Gundo {{{
-if !empty(glob(plugindir . '/gundo.vim'))
-    nnoremap <silent> <leader>g :GundoToggle<CR>
-    let g:gundo_width=50
+" Mundo {{{
+if !empty(glob(plugindir . '/vim-mundo'))
+    nnoremap <silent> <leader>g :MundoToggle<CR>
+    let g:mundo_width=50
 endif
-" }}} Gundo
+" }}} Mundo
 
 " Ctrl-P {{{
 if !empty(glob(plugindir . '/ctrlp.vim'))
