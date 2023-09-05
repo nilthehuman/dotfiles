@@ -233,6 +233,7 @@ noremap É ,
 noremap j gj
 noremap k gk
 
+" warning: these keys are reassigned if GitGutter is available
 noremap J L8k
 noremap K H8j
 
@@ -427,6 +428,8 @@ if !empty(glob(plugindir . '/vim-gitgutter'))
     if terminator_profile ==? '' || terminator_profile ==? 'solarized'
         let g:gitgutter_highlight_lines = 1
     endif
+    nmap J <Plug>(GitGutterNextHunk)
+    nmap K <Plug>(GitGutterPrevHunk)
 endif
 " }}} gitgutter
 
