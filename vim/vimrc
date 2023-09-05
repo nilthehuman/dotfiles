@@ -408,6 +408,8 @@ if !empty(glob(plugindir . '/syntastic'))
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_check_on_open = 0
     let g:syntastic_check_on_wq = 0
+    let g:syntastic_enable_highlighting = 0
+    let g:syntastic_mode_map = { "mode": "passive" }
 
     let g:syntastic_cpp_checkers=['gcc', 'cppcheck']
     let g:syntastic_haskell_checkers=['hlint']
@@ -416,6 +418,9 @@ if !empty(glob(plugindir . '/syntastic'))
     let g:syntastic_python_checkers=['pylint']
     let g:syntastic_vim_checkers=['vint']
     let g:syntastic_vim_vint_quiet_messages={ 'level': 'warning' }
+
+    " see gitgutter setup below about this auxiliary variable
+    autocmd BufEnter * if !exists('b:syntastic_check_last') | let b:syntastic_check_last=0 | endif
 endif
 " }}} Syntastic!
 
@@ -428,8 +433,23 @@ if !empty(glob(plugindir . '/vim-gitgutter'))
     if terminator_profile ==? '' || terminator_profile ==? 'solarized'
         let g:gitgutter_highlight_lines = 1
     endif
+    function! PreviewHunkOrSyntastic()
+        GitGutterPreviewHunk
+        if !&previewwindow
+            let b:save_last = undotree().save_last
+            " don't bother if there hasn't been a :w since last check
+            if b:syntastic_check_last < b:save_last
+                let b:syntastic_check_last = b:save_last
+                SyntasticCheck
+            endif
+        endif
+    endfunction
     nmap J <Plug>(GitGutterNextHunk)
     nmap K <Plug>(GitGutterPrevHunk)
+    nmap S <Plug>(GitGutterPreviewHunk)
+    if exists("g:syntastic_vim_checkers")
+        nmap <silent> S :silent! call PreviewHunkOrSyntastic()<CR>
+    endif
 endif
 " }}} gitgutter
 
