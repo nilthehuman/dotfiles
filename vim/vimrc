@@ -1,11 +1,8 @@
 " plugins, colorschemes and vimrc are stored here:
-let vimdir = '~/.vim'
-let plugindir = vimdir . '/pack/plugins/start'
+let oldvimdir = '~/.vim'
+let neovimdir = '~/.local/share/nvim'
+let plugindir = neovimdir . '/plugged'
 
-
-if !empty(glob(vimdir . '/autoload/pathogen.vim'))
-    execute pathogen#infect()
-endif
 
 if has('autocmd')
     filetype plugin indent on
@@ -165,9 +162,9 @@ set history=1000
 " Persistent undo. Why the hell isn't this default anyway?
 if has('persistent_undo')
     set undofile
-    execute 'set undodir=' . vimdir . '/undo'
+    execute 'set undodir=' . oldvimdir . '/undo'
 endif
-execute 'set directory=' . vimdir . '/swap'
+execute 'set directory=' . oldvimdir . '/swap'
 set nobackup
 set nowritebackup
 
