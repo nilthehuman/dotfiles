@@ -103,3 +103,9 @@ export NODE_PATH=/usr/lib/node_modules/
 
 # this was suggested by `stack'
 PATH="$HOME/.local/bin:$PATH"
+
+# use NeoVim as the default pager for now
+export PAGER=nvimpager
+
+export EDITOR=nvim
+export SUDO_EDITOR=nvim
