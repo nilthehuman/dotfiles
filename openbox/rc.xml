@@ -398,18 +398,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>false</enabled>
-          <name>dmenu-bind</name>
+          <name>dmenu</name>
         </startupnotify>
-        <command>~/.config/dmenu/dmenu-bind.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-p">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>dmenu-bind</name>
-        </startupnotify>
-        <command>~/.config/dmenu/dmenu-bind.sh</command>
+        <command>dmenu_run -b -i -l 4 -p "dmenu >" -nb '#151617' -nf '#d8d8d8' -sb '#d8d8d8' -sf '#151617'</command>
       </action>
     </keybind>
     <keybind key="W-a">
@@ -418,7 +409,7 @@
           <enabled>false</enabled>
           <name>Terminal</name>
         </startupnotify>
-        <command>env PROFILE="default" x-terminal-emulator</command>
+        <command>env PROFILE="default" lxterminal</command>
       </action>
     </keybind>
     <keybind key="W-s">
@@ -427,7 +418,7 @@
           <enabled>false</enabled>
           <name>Terminal (Solarized)</name>
         </startupnotify>
-        <command>env PROFILE="solarized" x-terminal-emulator --profile=solarized</command>
+        <command>env PROFILE="solarized" lxterminal --profile=solarized</command>
       </action>
     </keybind>
     <keybind key="W-x">
@@ -463,7 +454,7 @@
           <enabled>false</enabled>
           <name>Web Browser</name>
         </startupnotify>
-        <command>x-www-browser</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -499,7 +490,7 @@
           <enabled>false</enabled>
           <name>htop</name>
         </startupnotify>
-        <command>x-terminal-emulator -T 'htop task manager' -e htop</command>
+        <command>lxterminal -T 'htop task manager' -e htop</command>
       </action>
     </keybind>
     <keybind key="W-q">
