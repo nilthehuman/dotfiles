@@ -131,3 +131,5 @@ alias exaa='exa --all --all'
 alias tree='\exa --tree'
 
 alias as='arbtt-stats --min-percentage=0 --output-exclude=Program:'
+
+alias grep='grep --exclude-dir=".git"'
