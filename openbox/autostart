@@ -30,11 +30,10 @@ nitrogen --restore &
 picom -b
 
 ## Start the tint2 session (the default tint2 will run if no sessions have been set)
-#(sleep 2s; bl-tint2-session) &
 (sleep 2s; tint2 -c ~/.config/tint2/tint2rc) &
 
 ## Start the Conky session (the default conkyrc will run if no sessions have been set)
-#(sleep 2s; bl-conky-session --autostart) &
+#(sleep 2s; conky) &
 
 ## Volume control for systray
 (sleep 2; volctl) &
@@ -42,11 +41,8 @@ picom -b
 ## Volume keys daemon
 xfce4-volumed &
 
-## Start Thunar Daemon, if set as bl-file-manager
-if [ "$(readlink -f $(which bl-file-manager))" = "$(which thunar)" ]
-then
-    thunar --daemon &
-fi
+## Start Thunar Daemon
+thunar --daemon &
 
 ## Enable power management
 xfce4-power-manager &
@@ -72,12 +68,5 @@ xset r rate 150 20 &
 
 ## Turn on/off system beep
 xset b off &
-
-## bl-welcome - post-installation script, will not run in a live session and
-## only runs once. Safe to remove.
-#(sleep 10; bl-welcome --firstrun) &
-
-## bl-fortune - have the system come up with a little adage (not yet enabled)
-#(sleep 120; bl-fortune) &
 
 arbtt-capture --sample-rate=10 &
