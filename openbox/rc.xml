@@ -409,16 +409,7 @@
           <enabled>false</enabled>
           <name>Terminal</name>
         </startupnotify>
-        <command>env PROFILE="default" lxterminal</command>
-      </action>
-    </keybind>
-    <keybind key="W-s">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Terminal (Solarized)</name>
-        </startupnotify>
-        <command>env PROFILE="solarized" lxterminal --profile=solarized</command>
+        <command>lxterminal</command>
       </action>
     </keybind>
     <keybind key="W-x">
