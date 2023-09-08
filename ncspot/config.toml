@@ -1,0 +1,22 @@
+[theme]
+background = "#121212"
+primary = "white"
+secondary = "#10b050"
+title = "#1ed05e"
+playing = "#1ed05e"
+playing_bg = "#083012"
+playing_selected = "#ffffff"
+highlight = "#ffffff"
+highlight_bg = "#262626"
+error = "light white"
+error_bg = "red"
+statusbar = "#10ea50"
+statusbar_progress = "#0ee218"
+statusbar_bg = "#121212"
+cmdline = "light white"
+cmdline_bg = "#121212"
+search_match = "#ffd832"
+
+# lilac if I ever need it for highlights or something
+#highlight = "#ff22ff"
+#highlight = "#ff6090"
