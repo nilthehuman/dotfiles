@@ -94,6 +94,10 @@
 "lxterminal -e htop"
     Mod4 + h
 
+# terminal-based Spotify client <3
+"lxterminal -e ncspot"
+    Mod4 + s
+
 # Stockfish in XBoard
 "xboard -initialMode Analysis -absoluteAnalysisScores true -scoreWhite true -fUCI -fcp stockfish -sUCI -scp stockfish"
     Mod4 + x
