@@ -63,15 +63,15 @@
     Alt + F2
 
 # Show dmenu
-"~/.config/dmenu/dmenu-bind.sh"
+"dmenu_run -b -i -l 4 -p "dmenu >" -nb '#151617' -nf '#d8d8d8' -sb '#d8d8d8' -sf '#151617'"
     Alt + F3
 
 # Terminal
-"x-terminal-emulator"
+"lxterminal"
     Mod4 + a
 
 # Web Browser
-"x-www-browser"
+"firefox"
     Mod4 + w
 
 # File Manager
@@ -91,14 +91,22 @@
     Mod4 + p
 
 # htop task manager
-"x-terminal-emulator -e htop"
+"lxterminal -e htop"
     Mod4 + h
+
+# Stockfish in XBoard
+"xboard -initialMode Analysis -absoluteAnalysisScores true -scoreWhite true -fUCI -fcp stockfish -sUCI -scp stockfish"
+    Mod4 + x
+
+# Torrent Client
+"transmission-gtk"
+    Mod4 + t
 
 # Lock Screen
 "light-locker"
     Mod4 + l
 
-# Logout
+# TODO: Logout
 #"bl-exit"
 #    Mod4 + q
 

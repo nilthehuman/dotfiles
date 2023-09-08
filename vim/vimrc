@@ -18,34 +18,16 @@ if has('syntax')
     au ColorScheme * highlight DiffDelete ctermfg=NONE guifg=NONE
     au ColorScheme * highlight DiffText   ctermfg=NONE guifg=NONE
 
-    let terminator_profile=$PROFILE
-    " Settings to accomodate each colorscheme
-    if terminator_profile ==? 'default'
-        set background=dark
-        set cursorline
-        set nocursorcolumn
-        colorscheme ir_black
+    set termguicolors
+    set background=dark
+    set cursorline
+    set nocursorcolumn
+    colorscheme solarized8
 
-        highlight SyntasticError             cterm=bold ctermfg=214 ctermbg=160
-        highlight SyntasticWarning           cterm=bold ctermfg=220 ctermbg=166
-        highlight link SyntasticStyleError   SyntasticError
-        highlight link SyntasticStyleWarning SyntasticWarning
-
-        highlight SyntasticErrorSign         cterm=bold ctermfg=160 ctermbg=NONE
-        highlight SyntasticWarningSign       cterm=bold ctermfg=166 ctermbg=NONE
-        highlight link SyntasticStyleErrorSign   SyntasticErrorSign
-        highlight link SyntasticStyleWarningSign SyntasticWarningSign
-    endif
-    if terminator_profile ==? '' || terminator_profile ==? 'solarized'
-        set termguicolors
-        set background=dark
-        colorscheme solarized8
-
-        highlight SyntasticError             ctermfg=015 ctermbg=009
-        highlight SyntasticWarning           ctermfg=015 ctermbg=010
-        highlight link SyntasticStyleError   SyntasticError
-        highlight link SyntasticStyleWarning SyntasticWarning
-    endif
+    highlight SyntasticError             ctermfg=015 ctermbg=009
+    highlight SyntasticWarning           ctermfg=015 ctermbg=010
+    highlight link SyntasticStyleError   SyntasticError
+    highlight link SyntasticStyleWarning SyntasticWarning
 
     " highlight whitespace characters at the end of each line
     highlight default TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
@@ -406,8 +388,8 @@ endif
 " Syntastic! {{{
 if !empty(glob(plugindir . '/syntastic'))
     let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_check_on_open = 0
-    let g:syntastic_check_on_wq = 0
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 1
     let g:syntastic_enable_highlighting = 0
     let g:syntastic_mode_map = { "mode": "passive" }
 
@@ -415,7 +397,9 @@ if !empty(glob(plugindir . '/syntastic'))
     let g:syntastic_haskell_checkers=['hlint']
     let g:syntastic_haskell_hlint_args="--hint=Default --hint=Dollar --hint=Generalise"
     let g:syntastic_javascript_checkers=['eslint', 'jshint']
-    let g:syntastic_python_checkers=['pylint']
+    " drop-in hack suggested here: github.com/vim-syntastic/syntastic/issues/2413
+    let g:syntastic_python_checkers=['flake8']
+    let g:syntastic_python_flake8_exec='ruff'
     let g:syntastic_vim_checkers=['vint']
     let g:syntastic_vim_vint_quiet_messages={ 'level': 'warning' }
 
@@ -430,26 +414,10 @@ if !empty(glob(plugindir . '/vim-gitgutter'))
     set updatetime=150
     let g:gitgutter_diff_args = '--minimal -w'
     let g:gitgutter_sign_column_always = 1
-    if terminator_profile ==? '' || terminator_profile ==? 'solarized'
-        let g:gitgutter_highlight_lines = 1
-    endif
-    function! PreviewHunkOrSyntastic()
-        GitGutterPreviewHunk
-        if !&previewwindow
-            let b:save_last = undotree().save_last
-            " don't bother if there hasn't been a :w since last check
-            if b:syntastic_check_last < b:save_last
-                let b:syntastic_check_last = b:save_last
-                SyntasticCheck
-            endif
-        endif
-    endfunction
+    let g:gitgutter_highlight_lines = 1
     nmap J <Plug>(GitGutterNextHunk)
     nmap K <Plug>(GitGutterPrevHunk)
     nmap S <Plug>(GitGutterPreviewHunk)
-    if exists("g:syntastic_vim_checkers")
-        nmap <silent> S :silent! call PreviewHunkOrSyntastic()<CR>
-    endif
 endif
 " }}} gitgutter
 
