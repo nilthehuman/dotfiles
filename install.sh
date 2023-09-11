@@ -38,6 +38,7 @@ declare -A links=(
     ["${DOTFILESDIR}/bash/bashrc"]="${HOME}/.bashrc"
     ["${DOTFILESDIR}/bash/profile"]="${HOME}/.profile"
     ["${DOTFILESDIR}/X/xinitrc"]="${HOME}/.xinitrc"
+    ["${DOTFILESDIR}/X/xinitrc"]="${HOME}/.xprofile"
     ["${DOTFILESDIR}/X/Xmodmap"]="${HOME}/.Xmodmap"
     ["${DOTFILESDIR}/X/xbindkeysrc"]="${HOME}/.xbindkeysrc"
     ["${DOTFILESDIR}/arbtt/categorize.cfg"]="${HOME}/.arbtt/categorize.cfg"

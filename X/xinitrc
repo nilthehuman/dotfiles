@@ -3,4 +3,5 @@ setxkbmap hu
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 xbindkeys -f ~/.xbindkeysrc
 xscreensaver --no-splash &
-exec openbox-session
+# you don't need to call the window manager from .xprofile
+[[ $(basename "$0" == ".xinitrc" ]] && exec openbox-session
