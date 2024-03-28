@@ -53,7 +53,7 @@ xfce4-power-manager &
 ## Start xscreensaver (light-locker now used by default, run via XDG autostart.)
 #xscreensaver -no-splash &
 
-redshift -l 47:19 -t 5700:3300 &
+redshift -l 47:19 -t 5700:2400 &
 
 ## Detect and configure touchpad. See 'man synclient' for more info.
 if egrep -iq 'touchpad' /proc/bus/input/devices; then
