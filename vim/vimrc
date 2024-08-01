@@ -29,6 +29,11 @@ if has('syntax')
     highlight link SyntasticStyleError   SyntasticError
     highlight link SyntasticStyleWarning SyntasticWarning
 
+    "highlight SyntasticError             cterm=bold ctermfg=214 ctermbg=160
+    "highlight SyntasticWarning           cterm=bold ctermfg=220 ctermbg=166
+    "highlight link SyntasticStyleError   SyntasticError
+    "highlight link SyntasticStyleWarning SyntasticWarning
+
     " highlight whitespace characters at the end of each line
     highlight default TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
     au BufRead     * match TrailingWhitespace '\V\s\+\$'
