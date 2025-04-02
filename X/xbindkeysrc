@@ -118,6 +118,10 @@
 "/home/nil/minihacks/switch_xkb.sh"
 	Mod4 + k
 
+# Switch between single and dual monitor setup
+"/home/nil/minihacks/switch_screenlayout.py"
+	Mod4 + m
+
 # Use Ctrl+BackSpace to delete a "small word" in the terminal
 "xdotool key alt+BackSpace"
     Control + BackSpace + Release
