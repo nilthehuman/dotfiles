@@ -110,9 +110,9 @@
 "light-locker"
     Mod4 + l
 
-# TODO: Logout
-#"bl-exit"
-#    Mod4 + q
+# Logout
+"bl-exit"
+    Mod4 + q
 
 # Switch between Hungarian acute accent vowels and Latin macron vowels
 "/home/nil/minihacks/switch_xkb.sh"
