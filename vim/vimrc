@@ -181,7 +181,7 @@ set smarttab " not sure about this one yet
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set textwidth=80
+set textwidth=0
 set nowrap
 set scrolloff=1
 
