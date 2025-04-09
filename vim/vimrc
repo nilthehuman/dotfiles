@@ -423,6 +423,7 @@ if !empty(glob(plugindir . '/vim-gitgutter'))
     nmap J <Plug>(GitGutterNextHunk)
     nmap K <Plug>(GitGutterPrevHunk)
     nmap S <Plug>(GitGutterPreviewHunk)
+    nmap U <Plug>(GitGutterUndoHunk)
 endif
 " }}} gitgutter
 
